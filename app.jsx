@@ -55,14 +55,11 @@ const Nav = () => {
           <a className="nav__link" href="#process" onClick={close}>Process</a>
           <a className="nav__link" href="#tarifs" onClick={close}>Tarifs</a>
           <a className="nav__link" href="#faq" onClick={close}>FAQ</a>
-          <a className="btn btn--wa-nav nav__cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={close}>
-            <WhatsAppIcon size={18} />
-            WhatsApp
-          </a>
         </nav>
-        <div className="nav__mobile-actions">
-          <a className="nav__wa-mobile" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <WhatsAppIcon size={24} color="#25D366" />
+        <div className="nav__end">
+          <a className="btn btn--wa-nav" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon size={18} color="#fff" />
+            WhatsApp
           </a>
           <button
             className="nav__mobile-toggle"
@@ -132,7 +129,7 @@ const HeroBg = () => {
 
 /* ---------- Hero ---------- */
 const Hero = ({ glow }) =>
-<section className={"hero" + (glow ? "" : " hero--no-fx")} id="top" style={{ height: "909px" }} data-screen-label="01 Hero">
+<section className={"hero" + (glow ? "" : " hero--no-fx")} id="top" data-screen-label="01 Hero">
     {glow && <HeroBg />}
     <div className="container hero__inner reveal">
       <span className="eyebrow">LA PREMIÈRE ENTREPRISE D'IA EN TUNISIE</span>
@@ -199,7 +196,7 @@ const PROBLEMS = [
 
 
 const Probleme = () =>
-<section className="section section--alt" id="probleme" data-screen-label="03 Probleme" style={{ height: "1325px" }}>
+<section className="section section--alt" id="probleme" data-screen-label="03 Probleme">
     <div className="container">
       <div className="section-head reveal">
         <span className="eyebrow">— LE PROBLÈME</span>
