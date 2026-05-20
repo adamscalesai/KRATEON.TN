@@ -38,27 +38,40 @@ const useReveal = () => {
 };
 
 /* ---------- Nav ---------- */
-const Nav = () =>
-<header className="nav">
-    <div className="container nav__inner">
-      <a href="#top" className="logo" aria-label="Krateon.tn — Accueil">
-        <span className="logo__mark" aria-hidden="true">
-          <img src="krateon-icon.svg" alt="" />
-        </span>
-        <span>KRATEON.TN</span>
-      </a>
-      <nav className="nav__links" aria-label="Navigation principale">
-        <a className="nav__link" href="#probleme">Votre Problème</a>
-        <a className="nav__link" href="#process">Process</a>
-        <a className="nav__link" href="#tarifs">Tarifs</a>
-        <a className="nav__link" href="#faq">FAQ</a>
-        <a className="btn btn--wa-nav nav__cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-          <WhatsAppIcon size={18} />
-          WhatsApp
+const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const close = () => setMenuOpen(false);
+  return (
+    <header className="nav">
+      <div className="container nav__inner">
+        <a href="#top" className="logo" aria-label="Krateon.tn — Accueil" onClick={close}>
+          <span className="logo__mark" aria-hidden="true">
+            <img src="krateon-icon.svg" alt="" />
+          </span>
+          <span>KRATEON.TN</span>
         </a>
-      </nav>
-    </div>
-  </header>;
+        <nav className={"nav__links" + (menuOpen ? " nav__links--open" : "")} aria-label="Navigation principale">
+          <a className="nav__link" href="#probleme" onClick={close}>Votre Problème</a>
+          <a className="nav__link" href="#process" onClick={close}>Process</a>
+          <a className="nav__link" href="#tarifs" onClick={close}>Tarifs</a>
+          <a className="nav__link" href="#faq" onClick={close}>FAQ</a>
+          <a className="btn btn--wa-nav nav__cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={close}>
+            <WhatsAppIcon size={18} />
+            WhatsApp
+          </a>
+        </nav>
+        <button
+          className="nav__mobile-toggle"
+          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          {menuOpen ? "✕" : "≡"}
+        </button>
+      </div>
+    </header>
+  );
+};
 
 
 /* ---------- Hero background motion graphic ---------- */
