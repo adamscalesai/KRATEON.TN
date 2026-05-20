@@ -60,14 +60,19 @@ const Nav = () => {
             WhatsApp
           </a>
         </nav>
-        <button
-          className="nav__mobile-toggle"
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(o => !o)}
-        >
-          {menuOpen ? "✕" : "≡"}
-        </button>
+        <div className="nav__mobile-actions">
+          <a className="nav__wa-mobile" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <WhatsAppIcon size={24} color="#25D366" />
+          </a>
+          <button
+            className="nav__mobile-toggle"
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(o => !o)}
+          >
+            {menuOpen ? "✕" : "≡"}
+          </button>
+        </div>
       </div>
     </header>
   );
