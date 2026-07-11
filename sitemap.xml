@@ -46,6 +46,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://krateon.tn/realisations/cloudian</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://krateon.tn/solutions/services-locaux</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
