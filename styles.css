@@ -350,6 +350,126 @@ body.motion-off .hero__node { animation: none; }
   font-weight: 500;
 }
 
+/* ---- Hero floating mockup cards (desktop only) ---- */
+.hero__cards {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 180ms ease-out;
+}
+@media (max-width: 1100px) {
+  .hero__cards { display: none; }
+}
+.fcard {
+  position: absolute;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -22px rgba(24,24,27,0.28);
+  padding: 14px;
+}
+.fcard--chat {
+  width: 240px;
+  top: 12%;
+  right: 16%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  animation: fcardFloat 7s ease-in-out infinite;
+}
+.fcard--maps {
+  width: 210px;
+  top: 50%;
+  right: 44%;
+  animation: fcardFloat 9s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+.fcard--stat {
+  width: 170px;
+  top: 70%;
+  right: 12%;
+  animation: fcardFloat 8s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+@keyframes fcardFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.fcard__chat-time {
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: var(--fg-muted);
+}
+.fcard__bubble {
+  max-width: 88%;
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+.fcard__bubble--in {
+  background: #fff;
+  border: 1px solid var(--border);
+  align-self: flex-start;
+  border-bottom-left-radius: 3px;
+}
+.fcard__bubble--out {
+  background: #DCF8C6;
+  align-self: flex-end;
+  border-bottom-right-radius: 3px;
+  color: #111;
+}
+.fcard__badge {
+  align-self: flex-end;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #fff;
+  background: var(--whatsapp);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-top: 2px;
+}
+.fcard__maps-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 0;
+}
+.fcard__pin {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 10px;
+}
+.fcard__pin--muted { background: var(--border); color: var(--fg-muted); }
+.fcard__maps-lines { flex: 1; }
+.fcard__line { height: 7px; border-radius: 4px; background: var(--border); margin-bottom: 6px; }
+.fcard__line--accent { background: var(--accent); opacity: 0.4; }
+.fcard__stars { color: #F5A623; font-size: 10px; }
+.fcard__stat-num {
+  font-family: "DM Mono", monospace;
+  font-size: 30px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.fcard__stat-label {
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+
 /* ---- Marquee strip ---- */
 .marquee {
   overflow: hidden;
@@ -778,6 +898,113 @@ body.motion-off .hero__node { animation: none; }
 .segcard h3 { font-size: 20px; line-height: 1.25; }
 .segcard__body { color: var(--fg-muted); font-size: 15px; line-height: 1.6; flex: 1; }
 
+/* ---- Industries chips ---- */
+.industries {
+  margin-top: clamp(36px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.industries__label {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+.industries__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-alt);
+  font-size: 14px;
+  color: var(--fg);
+  transition: border-color 240ms var(--ease), background 240ms var(--ease);
+}
+.chip:hover { border-color: var(--border-hover); background: #fff; }
+
+/* ---- Packs (tiers) ---- */
+.tier {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: border-color 240ms var(--ease), transform 240ms var(--ease), box-shadow 240ms var(--ease);
+}
+.tier:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -18px rgba(59,130,246,0.25);
+}
+.tier--popular {
+  border-color: var(--accent);
+  box-shadow: 0 18px 40px -22px rgba(59,130,246,0.35);
+}
+.tier__badge {
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--accent);
+  color: #fff;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.tier__name {
+  font-family: "DM Mono", monospace;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--fg);
+}
+.tier__desc { color: var(--fg-muted); font-size: 15px; margin: 0; }
+.tier__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.tier__features li {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+  padding-left: 24px;
+  position: relative;
+}
+.tier__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+.tier__cta { justify-content: center; margin-top: 8px; }
+
+/* ---- bcard note (in-development mention) ---- */
+.bcard__note {
+  font-family: "DM Mono", monospace;
+  font-size: 12.5px;
+  color: var(--fg-muted);
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
 /* ---- Témoignages (structure ready, hidden until real quotes exist) ---- */
 .testimonials--hidden { display: none; }
 .tcard {
@@ -1055,6 +1282,9 @@ body.motion-off .hero__node { animation: none; }
   .mock-chat__typing { display: none !important; }
   .mock-chat__typing span { animation: none !important; }
   .segcard, .segcard::before { transition: none !important; }
+  .fcard { animation: none !important; }
+  .hero__cards { transition: none !important; transform: none !important; }
+  .tier { transition: none !important; }
 }
 
 /* ---- Service page hero (simpler, no motion graphic needed) ---- */

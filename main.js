@@ -94,13 +94,15 @@
 
   /* ---- Hero parallax (mouse-tracked) ---- */
   var parallax = document.querySelector(".hero__parallax");
-  if (parallax && window.matchMedia("(pointer: fine)").matches) {
+  var heroCards = document.querySelector(".hero__cards");
+  if ((parallax || heroCards) && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
     window.addEventListener(
       "mousemove",
       function (e) {
         var x = (e.clientX / window.innerWidth - 0.5) * 20;
         var y = (e.clientY / window.innerHeight - 0.5) * 12;
-        parallax.style.transform = "translate(" + x + "px, " + y + "px)";
+        if (parallax) parallax.style.transform = "translate(" + x + "px, " + y + "px)";
+        if (heroCards) heroCards.style.transform = "translate(" + x * -0.6 + "px, " + y * -0.6 + "px)";
       },
       { passive: true }
     );
