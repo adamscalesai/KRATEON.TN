@@ -3,927 +3,559 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Krateon.tn — La première entreprise d'IA en Tunisie</title>
-<meta name="description" content="Agents IA, sites web intelligents, et automatisation pour les entreprises tunisiennes. L'extension tunisienne de Krateon AI. Déployé en 2 semaines." />
+<title>Krateon.tn : l'agence IA des PME tunisiennes</title>
+<meta name="description" content="Sites web, agents WhatsApp et automatisations pour les PME tunisiennes. Déploiement en 5 jours à 2 semaines. Basés au Grand Tunis, support en français." />
+<link rel="canonical" href="https://krateon.tn/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://krateon.tn/" />
+<meta property="og:title" content="Krateon.tn : l'agence IA des PME tunisiennes" />
+<meta property="og:description" content="Sites web, agents WhatsApp et automatisations pour les PME tunisiennes. Déploiement en 5 jours à 2 semaines." />
+<meta property="og:locale" content="fr_TN" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="icon" type="image/svg+xml" href="krateon-icon.svg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 
-<style>
-  :root {
-    --bg: #FFFFFF;
-    --bg-alt: #FAFAFA;
-    --fg: #18181B;
-    --fg-muted: #71717A;
-    --border: #E5E5E5;
-    --border-hover: #3B82F6;
-    --accent: #3B82F6;
-    --accent-hover: #2563EB;
-    --whatsapp: #25D366;
-    --card-bg: #FFFFFF;
-    --radius-sm: 6px;
-    --radius: 10px;
-    --radius-lg: 16px;
-    --maxw: 1200px;
-    --gutter: clamp(20px, 4vw, 48px);
-    --section-y: clamp(72px, 9vw, 128px);
-    --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; overflow-x: hidden; }
-  html { scroll-behavior: smooth; scroll-padding-top: 68px; }
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "ss01", "cv11";
-  }
-
-  a { color: inherit; text-decoration: none; }
-  button { font-family: inherit; cursor: pointer; border: none; background: none; padding: 0; color: inherit; }
-
-  ::selection { background: var(--accent); color: #fff; }
-
-  /* ---- Layout ---- */
-  .container {
-    width: 100%;
-    max-width: var(--maxw);
-    margin-inline: auto;
-    padding-inline: var(--gutter);
-  }
-  .section {
-    padding-block: var(--section-y);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    z-index: auto;
-  }
-  .section--alt { background: var(--bg-alt); }
-  .section:last-of-type { border-bottom: none; }
-
-  /* ---- Type ---- */
-  .eyebrow {
-    font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    color: var(--fg-muted);
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 24px;
-  }
-  h1, h2, h3, h4 {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin: 0;
-    text-wrap: balance;
-  }
-  h1 {
-    font-size: clamp(40px, 5.8vw, 76px);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
-    font-weight: 500;
-  }
-  h2 {
-    font-size: clamp(32px, 4.4vw, 56px);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    font-weight: 500;
-  }
-  h3 {
-    font-size: clamp(20px, 1.6vw, 24px);
-    line-height: 1.2;
-    font-weight: 500;
-  }
-  .accent { color: var(--accent); }
-  .lede {
-    font-size: clamp(17px, 1.4vw, 20px);
-    line-height: 1.55;
-    color: var(--fg-muted);
-    max-width: 64ch;
-    text-wrap: pretty;
-  }
-  .section-head {
-    max-width: 760px;
-    margin-bottom: clamp(48px, 6vw, 80px);
-  }
-  .section-head h2 { margin-bottom: 20px; }
-
-  /* ---- Buttons ---- */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    height: 48px;
-    padding: 0 22px;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    transition: all 240ms var(--ease);
-    border: 1px solid transparent;
-    white-space: nowrap;
-  }
-  .btn--primary {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.18) inset, 0 6px 18px -8px rgba(59,130,246,0.55);
-  }
-  .btn--primary:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 10px 24px -8px rgba(59,130,246,0.65);
-  }
-  .btn--ghost {
-    background: transparent;
-    color: var(--fg);
-    border-color: var(--border);
-  }
-  .btn--ghost:hover {
-    border-color: var(--fg);
-    transform: translateY(-1px);
-  }
-  .btn--lg { height: 56px; padding: 0 28px; font-size: 16px; }
-  .btn .arrow { transition: transform 240ms var(--ease); display: inline-block; }
-  .btn:hover .arrow { transform: translateX(3px); }
-
-  .link-arrow {
-    font-size: 15px;
-    color: var(--fg);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 4px;
-    transition: border-color 240ms var(--ease), color 240ms var(--ease);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .link-arrow:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ---- Nav ---- */
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: saturate(180%) blur(14px);
-    -webkit-backdrop-filter: saturate(180%) blur(14px);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 1px 12px rgba(0,0,0,0.08);
-  }
-  main { padding-top: 68px; }
-  .nav__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-  }
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: "DM Mono", monospace;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    font-weight: 500;
-  }
-  .logo__mark {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-  .logo__mark img { width: 100%; height: 100%; display: block; }
-  /* WhatsApp nav button — always visible, green */
-  .btn--wa-nav {
-    background: #25D366;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 14px;
-    height: auto;
-    gap: 8px;
-    white-space: nowrap;
-  }
-  .btn--wa-nav:hover {
-    background: #1fba59;
-    transform: translateY(-1px);
-    border-color: transparent;
-  }
-  .nav__end {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .nav__links {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .nav__link {
-    font-size: 14px;
-    color: var(--fg-muted);
-    padding: 8px 14px;
-    border-radius: 8px;
-    transition: color 200ms var(--ease), background 200ms var(--ease);
-  }
-  .nav__link:hover { color: var(--fg); background: var(--bg-alt); }
-  .nav__mobile-toggle { display: none; }
-
-  @media (max-width: 768px) {
-    .nav__links { display: none; }
-    .nav__inner { height: 60px; }
-  }
-
-  /* ---- Hero ---- */
-  .hero {
-    padding-block: clamp(80px, 10vw, 140px) clamp(72px, 9vw, 120px);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero__inner { max-width: 1040px; position: relative; z-index: 1; }
-  .hero h1 { margin-bottom: 28px; }
-  .hero .lede { margin-bottom: 40px; max-width: 62ch; }
-  .hero__ctas {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  /* ---- Hero motion graphics ---- */
-  .hero__bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .hero__grid {
-    position: absolute;
-    inset: -64px 0 0 0;
-    background-image:
-      linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
-    background-size: 64px 64px;
-    animation: gridMove 14s linear infinite;
-    mask-image: linear-gradient(to bottom, black, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black, black 60%, transparent 100%);
-  }
-  .hero__radial {
-    position: absolute;
-    top: 18%;
-    right: 8%;
-    width: 720px;
-    height: 560px;
-    background: radial-gradient(ellipse at center,
-      color-mix(in oklab, var(--accent) 16%, transparent) 0%,
-      transparent 65%);
-    pointer-events: none;
-    animation: heroDrift 18s ease-in-out infinite alternate;
-  }
-  .hero__network {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  .hero__network line { stroke: var(--accent); stroke-width: 1; stroke-opacity: 0.22; }
-  .hero__node {
-    position: absolute;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px color-mix(in oklab, var(--accent) 80%, transparent);
-    transform: translate(-50%, -50%);
-    animation: blink 3s ease-in-out infinite;
-  }
-  /* hero parallax overlay (mouse-tracked in JS) */
-  .hero__parallax {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(ellipse 60% 55% at 65% 45%,
-      color-mix(in oklab, var(--accent) 10%, transparent) 0%,
-      transparent 70%);
-    transition: transform 180ms ease-out;
-  }
-  .hero--no-fx .hero__grid,
-  .hero--no-fx .hero__radial,
-  .hero--no-fx .hero__network,
-  .hero--no-fx .hero__node,
-  .hero--no-fx .hero__parallax { display: none; }
-
-  @keyframes gridMove {
-    from { transform: translateY(0); }
-    to   { transform: translateY(-64px); }
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: 0.2; }
-  }
-  @keyframes heroDrift {
-    0%   { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(-50px, 30px) scale(1.06); }
-  }
-  body.motion-off .hero__grid,
-  body.motion-off .hero__radial,
-  body.motion-off .hero__node { animation: none; }
-  .hero__meta {
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
-    max-width: 720px;
-  }
-  .hero__meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .hero__meta-k {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    color: var(--fg-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .hero__meta-v {
-    font-size: 15px;
-    color: var(--fg);
-    font-weight: 500;
-  }
-
-  /* ---- Problem grid ---- */
-  .grid-4 {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-  @media (max-width: 760px) {
-    .grid-4 { grid-template-columns: 1fr; }
-  }
-
-  .pcard {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    transition: border-color 240ms var(--ease), transform 240ms var(--ease), box-shadow 240ms var(--ease);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .pcard:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px -18px rgba(59,130,246,0.25);
-  }
-  .pcard__tag {
-    font-family: "DM Mono", monospace;
-    font-size: 12px;
-    color: var(--fg-muted);
-    letter-spacing: 0.04em;
-  }
-  .pcard h3 { font-size: 22px; line-height: 1.2; }
-  .pcard__body { color: var(--fg-muted); font-size: 15.5px; line-height: 1.6; }
-  .pcard__metric {
-    margin-top: auto;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
-    font-family: "DM Mono", monospace;
-    font-size: 13px;
-    color: var(--fg);
-    letter-spacing: 0.01em;
-  }
-
-  /* ---- Steps ---- */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  @media (max-width: 900px) {
-    .steps { grid-template-columns: 1fr; }
-    .step + .step { border-top: 1px solid var(--border); border-left: none; }
-  }
-  .step {
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: relative;
-    transition: background 240ms var(--ease);
-  }
-  .step + .step { border-left: 1px solid var(--border); }
-  @media (max-width: 900px) {
-    .step + .step { border-left: none; }
-  }
-  .step:hover { background: var(--bg-alt); }
-  .step__num {
-    font-family: "DM Mono", monospace;
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-  }
-  .step h3 { font-size: 22px; line-height: 1.2; }
-  .step__body { color: var(--fg-muted); font-size: 15.5px; line-height: 1.6; }
-
-  /* ---- Results ---- */
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-  }
-  @media (max-width: 900px) {
-    .grid-3 { grid-template-columns: 1fr; }
-  }
-  .rcard {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    transition: all 240ms var(--ease);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .rcard:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px -18px rgba(59,130,246,0.25);
-  }
-  .rcard__tag {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .rcard h3 { font-size: 22px; line-height: 1.25; }
-  .rcard__body { color: var(--fg-muted); font-size: 15.5px; line-height: 1.6; }
-
-  /* ---- Pricing ---- */
-  .tiers {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    align-items: stretch;
-  }
-  @media (max-width: 980px) {
-    .tiers { grid-template-columns: 1fr; }
-  }
-  .tier {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 36px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    transition: all 240ms var(--ease);
-    position: relative;
-    z-index: 1;
-  }
-  .tier:hover { border-color: var(--border-hover); }
-  .tier--popular {
-    border-color: var(--accent);
-    box-shadow: 0 24px 48px -28px rgba(59,130,246,0.4);
-  }
-  .tier--popular::before {
-    content: "CHOIX LE PLUS POPULAIRE";
-    position: absolute;
-    top: -12px;
-    left: 32px;
-    background: var(--accent);
-    color: #fff;
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-weight: 500;
-  }
-  .tier__name {
-    font-family: "DM Mono", monospace;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--fg);
-    text-transform: uppercase;
-  }
-  .tier__desc {
-    font-size: 16px;
-    color: var(--fg);
-    line-height: 1.4;
-    min-height: 44px;
-  }
-  .tier__rule {
-    height: 1px;
-    background: var(--border);
-    margin: 4px 0;
-  }
-  .tier__features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex: 1;
-  }
-  .tier__features li {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    font-size: 14.5px;
-    line-height: 1.45;
-    color: var(--fg);
-  }
-  .tier__features li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    margin-top: 3px;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%233B82F6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='3 8.5 6.5 12 13 5'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .tier .btn { width: 100%; justify-content: center; }
-
-  /* ---- FAQ ---- */
-  .faq {
-    border-top: 1px solid var(--border);
-  }
-  .faq__item {
-    border-bottom: 1px solid var(--border);
-  }
-  .faq__q {
-    width: 100%;
-    text-align: left;
-    padding: 28px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    font-size: clamp(17px, 1.5vw, 20px);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.35;
-    transition: color 200ms var(--ease);
-  }
-  .faq__q:hover { color: var(--accent); }
-  .faq__icon {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    display: grid;
-    place-items: center;
-    transition: all 240ms var(--ease);
-    position: relative;
-  }
-  .faq__icon::before, .faq__icon::after {
-    content: "";
-    position: absolute;
-    background: var(--fg);
-    transition: transform 240ms var(--ease), background 240ms var(--ease);
-  }
-  .faq__icon::before { width: 10px; height: 1.5px; }
-  .faq__icon::after { width: 1.5px; height: 10px; }
-  .faq__item--open .faq__icon {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-  .faq__item--open .faq__icon::before { background: #fff; }
-  .faq__item--open .faq__icon::after { background: #fff; transform: rotate(90deg); }
-  .faq__a {
-    overflow: hidden;
-    transition: grid-template-rows 320ms var(--ease);
-    display: grid;
-    grid-template-rows: 0fr;
-  }
-  .faq__item--open .faq__a { grid-template-rows: 1fr; }
-  .faq__a-inner {
-    min-height: 0;
-    color: var(--fg-muted);
-    font-size: 16px;
-    line-height: 1.65;
-    max-width: 72ch;
-  }
-  .faq__a-inner > p {
-    margin: 0;
-    padding-bottom: 28px;
-  }
-
-  .faq__footer {
-    margin-top: 56px;
-    padding: 36px;
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .faq__footer-text h3 { margin-bottom: 6px; font-size: 20px; }
-  .faq__footer-text p { margin: 0; color: var(--fg-muted); font-size: 15px; }
-
-  /* ---- Final CTA ---- */
-  .final {
-    text-align: left;
-  }
-  .final__inner { max-width: 880px; }
-  .final h2 { margin-bottom: 24px; }
-  .final .lede { margin-bottom: 40px; }
-  .final__ctas {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .final__note {
-    margin-top: 24px;
-    font-family: "DM Mono", monospace;
-    font-size: 13px;
-    color: var(--fg-muted);
-    letter-spacing: 0.01em;
-  }
-  .wa-btn {
-    background: #fff;
-    color: var(--fg);
-    border: 1px solid var(--border);
-  }
-  .wa-btn:hover {
-    border-color: var(--whatsapp);
-    color: var(--whatsapp);
-    transform: translateY(-1px);
-  }
-
-  /* ---- Footer ---- */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding-block: 56px 28px;
-    background: var(--bg);
-  }
-  .footer__grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-  @media (max-width: 760px) {
-    .footer__grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-  .footer__tag {
-    color: var(--fg-muted);
-    font-size: 14px;
-    margin-top: 14px;
-    max-width: 32ch;
-  }
-  .footer__col-title {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--fg-muted);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 15px;
-  }
-  .footer__links a { color: var(--fg); transition: color 200ms var(--ease); }
-  .footer__links a:hover { color: var(--accent); }
-  .footer__social {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 4px;
-  }
-  .icon-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    display: inline-grid;
-    place-items: center;
-    transition: all 200ms var(--ease);
-    color: var(--fg);
-  }
-  .icon-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-  .icon-btn--wa:hover { border-color: var(--whatsapp); color: var(--whatsapp); }
-  .footer__bottom {
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    font-size: 13px;
-    color: var(--fg-muted);
-  }
-  .footer__bottom a { color: var(--fg-muted); }
-  .footer__bottom a:hover { color: var(--fg); }
-  .footer__legal { display: flex; gap: 18px; flex-wrap: wrap; }
-
-  /* ---- Reveal animation ---- */
-  :root { --motion-y: 14px; --motion-d: 600ms; }
-  body.motion-subtle { --motion-y: 6px; --motion-d: 380ms; }
-  body.motion-off    { --motion-y: 0px;  --motion-d: 0ms; }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(var(--motion-y));
-    transition: opacity var(--motion-d) var(--ease), transform var(--motion-d) var(--ease);
-  }
-  .reveal.is-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  body.motion-off .reveal { opacity: 1 !important; transform: none !important; }
-
-  /* (Old .hero__glow rules superseded by .hero__radial above) */
-
-  /* logo mark subtle pulse */
-  .logo__mark img { animation: logoPulse 7s ease-in-out infinite; transform-origin: center; }
-  @keyframes logoPulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.06); }
-  }
-  body.motion-off .logo__mark img,
-  body.motion-off .hero__glow { animation: none; }
-
-  /* ---- Blue section variant ---- */
-  /* Applied to #probleme when body.bs-probleme is set, and to #commencer when body.bs-final is set */
-  body.bs-probleme #probleme,
-  body.bs-final    #commencer {
-    background: var(--accent);
-    color: #fff;
-    border-color: transparent;
-    position: relative;
-    overflow: hidden;
-  }
-  body.bs-probleme #probleme::before,
-  body.bs-final    #commencer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(900px 360px at 80% 0%, rgba(255,255,255,0.10), transparent 60%),
-      radial-gradient(700px 320px at 10% 100%, rgba(255,255,255,0.06), transparent 60%);
-    pointer-events: none;
-  }
-  body.bs-probleme #probleme > *,
-  body.bs-final    #commencer > * { position: relative; }
-
-  body.bs-probleme #probleme .eyebrow,
-  body.bs-final    #commencer .eyebrow { color: rgba(255,255,255,0.72); }
-  body.bs-probleme #probleme .lede,
-  body.bs-final    #commencer .lede    { color: rgba(255,255,255,0.86); }
-  body.bs-probleme #probleme h2 .accent,
-  body.bs-final    #commencer h2 .accent {
-    color: #fff;
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 8px;
-    text-decoration-color: rgba(255,255,255,0.55);
-  }
-
-  /* Cards on blue */
-  body.bs-probleme #probleme .pcard {
-    background: #fff;
-    color: var(--fg);
-    border-color: rgba(255,255,255,0.0);
-    box-shadow: 0 18px 40px -22px rgba(0,0,0,0.35);
-  }
-  body.bs-probleme #probleme .pcard:hover {
-    border-color: #fff;
-    box-shadow: 0 22px 50px -22px rgba(0,0,0,0.45);
-  }
-  body.bs-probleme #probleme .pcard__metric { color: var(--accent); border-top-color: var(--border); }
-
-  /* Final-CTA blue button inversion */
-  body.bs-final #commencer .btn--primary {
-    background: #fff;
-    color: var(--accent);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.04) inset, 0 10px 24px -10px rgba(0,0,0,0.3);
-  }
-  body.bs-final #commencer .btn--primary:hover {
-    background: #f5f9ff;
-    color: var(--accent-hover);
-  }
-  body.bs-final #commencer .wa-btn {
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.4);
-  }
-  body.bs-final #commencer .wa-btn:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: #fff;
-    color: #fff;
-  }
-  body.bs-final #commencer .final__note { color: rgba(255,255,255,0.7); }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .hero__glow, .logo__mark img { animation: none !important; }
-  }
-
-  /* ── Mobile fixes ── */
-  @media (max-width: 768px) {
-    :root { --section-y: 48px; --gutter: 16px; }
-    main { padding-top: 60px; }
-
-    h1 { font-size: 36px; }
-    .hero { padding-block: 48px; }
-    .grid-4 { grid-template-columns: 1fr; }
-
-    .nav__inner { height: 60px; }
-
-    .nav__mobile-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      font-size: 20px;
-      color: var(--fg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: transparent;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: background 200ms var(--ease);
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Krateon.tn",
+  "url": "https://krateon.tn/",
+  "logo": "https://krateon.tn/krateon-icon.svg",
+  "email": "adam@krateon.tn",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Local numéro 10, Centre Commercial et Culturel X",
+    "addressLocality": "Ariana",
+    "postalCode": "2092",
+    "addressCountry": "TN"
+  },
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Krateon.tn",
+  "image": "https://krateon.tn/krateon-icon.svg",
+  "url": "https://krateon.tn/",
+  "telephone": "+21690005510",
+  "email": "adam@krateon.tn",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Local numéro 10, Centre Commercial et Culturel X",
+    "addressLocality": "Ariana",
+    "postalCode": "2092",
+    "addressCountry": "TN"
+  },
+  "areaServed": "TN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Je peux pas juste utiliser ChatGPT directement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT est un outil, nous construisons un système. ChatGPT répond quand vous lui parlez. Notre système répond à vos clients sur WhatsApp 24h sur 24, capture leurs informations, prend des rendez vous et fait des relances automatiquement, sans que vous interveniez." }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien ça coûte vraiment ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ça dépend de ce qu'on déploie et de la taille du projet. On ne donne pas de tarif générique parce que ça n'existerait pas, un site n'a rien à voir avec un agent WhatsApp complet. Écrivez nous sur WhatsApp ou réservez un appel, on regarde votre cas et on vous chiffre ça clairement." }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour déployer ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un site web : environ 5 jours ouvrés. Un agent WhatsApp : environ 2 semaines. Une automatisation sur mesure : 2 à 3 semaines selon la complexité. Ce sont des engagements, pas des estimations vagues." }
+    },
+    {
+      "@type": "Question",
+      "name": "J'ai besoin d'un développeur pour utiliser ça ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Tout est configuré, déployé et géré par nous. Vous utilisez vos outils habituels : WhatsApp, votre site, votre email. Le système travaille en arrière plan, aucune compétence technique requise de votre côté." }
+    },
+    {
+      "@type": "Question",
+      "name": "Et si quelque chose se casse et vous n'êtes pas disponibles ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chaque déploiement inclut de la documentation et un support WhatsApp en français. On est à Tunis, même fuseau horaire, mêmes jours ouvrés. Pas de support à 4h du matin par email en anglais." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes données sont elles sécurisées ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Les données sont stockées de manière sécurisée et ne sont jamais partagées avec des tiers. On applique les mêmes standards que pour n'importe quel client européen ou américain." }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez vous partout en Tunisie ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. On travaille à distance avec des clients partout dans le pays, de Tunis à Sfax à Sousse. Les échanges se font en visio ou par téléphone, le déploiement ne demande pas de présence physique." }
+    },
+    {
+      "@type": "Question",
+      "name": "Le site m'appartient il vraiment ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, entièrement. Vous recevez le code, les accès et la documentation. Rien n'est verrouillé chez nous, si un jour vous voulez changer de prestataire, vous partez avec tout." }
     }
-    .nav__mobile-toggle:hover { background: var(--bg-alt); }
-
-    .nav__links--open {
-      display: flex !important;
-      flex-direction: column;
-      align-items: stretch;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: saturate(180%) blur(14px);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 0 16px;
-      z-index: 9998;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-    .nav__links--open .nav__link {
-      padding: 14px 24px;
-      border-radius: 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 375px) {
-    h1 { font-size: 28px; }
-  }
-
-</style>
+  ]
+}
+</script>
 </head>
 <body>
 
-<div id="root"></div>
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="logo" aria-label="Krateon.tn, accueil">
+      <span class="logo__mark" aria-hidden="true"><img src="krateon-icon.svg" alt="" /></span>
+      <span>KRATEON.TN</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a class="nav__link" href="#services">Services</a>
+      <a class="nav__link" href="#realisations">Réalisations</a>
+      <a class="nav__link" href="#process">Process</a>
+      <a class="nav__link" href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__end">
+      <a class="btn btn--wa-nav" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.768.967-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.04 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.889-9.884a9.823 9.823 0 016.988 2.895 9.825 9.825 0 012.892 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.298A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413" /></svg>
+        <span class="wa-label">Discuter sur WhatsApp</span>
+      </a>
+      <button class="nav__mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+    </div>
+  </div>
+</header>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<main>
 
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel" src="app.jsx"></script>
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__radial"></div>
+    <svg class="hero__network">
+      <line x1="15%" y1="20%" x2="38%" y2="28%" />
+      <line x1="38%" y1="28%" x2="72%" y2="12%" />
+      <line x1="72%" y1="12%" x2="92%" y2="18%" />
+      <line x1="72%" y1="12%" x2="55%" y2="18%" />
+      <line x1="38%" y1="28%" x2="25%" y2="55%" />
+      <line x1="62%" y1="52%" x2="88%" y2="38%" />
+      <line x1="62%" y1="52%" x2="78%" y2="72%" />
+      <line x1="62%" y1="52%" x2="82%" y2="55%" />
+      <line x1="78%" y1="72%" x2="45%" y2="82%" />
+      <line x1="45%" y1="82%" x2="8%" y2="62%" />
+      <line x1="55%" y1="18%" x2="38%" y2="28%" />
+      <line x1="82%" y1="55%" x2="88%" y2="38%" />
+      <line x1="82%" y1="55%" x2="78%" y2="72%" />
+    </svg>
+    <span class="hero__node" style="left:15%;top:20%;animation-delay:0s"></span>
+    <span class="hero__node" style="left:72%;top:12%;animation-delay:.22s"></span>
+    <span class="hero__node" style="left:88%;top:38%;animation-delay:.44s"></span>
+    <span class="hero__node" style="left:78%;top:72%;animation-delay:.66s"></span>
+    <span class="hero__node" style="left:45%;top:82%;animation-delay:.88s"></span>
+    <span class="hero__node" style="left:8%;top:62%;animation-delay:1.1s"></span>
+    <span class="hero__node" style="left:38%;top:28%;animation-delay:1.32s"></span>
+    <span class="hero__node" style="left:62%;top:52%;animation-delay:1.54s"></span>
+    <span class="hero__node" style="left:92%;top:18%;animation-delay:1.76s"></span>
+    <span class="hero__node" style="left:25%;top:55%;animation-delay:1.98s"></span>
+    <span class="hero__node" style="left:55%;top:18%;animation-delay:2.2s"></span>
+    <span class="hero__node" style="left:82%;top:55%;animation-delay:2.42s"></span>
+    <div class="hero__parallax"></div>
+  </div>
+  <div class="container hero__inner reveal">
+    <span class="eyebrow">L'AGENCE IA DES PME TUNISIENNES</span>
+    <h1>Un site qui sort sur Google.<br /><span class="accent">Un agent qui répond à 23h.</span></h1>
+    <p class="lede">
+      On construit les systèmes IA que les PME tunisiennes n'ont pas le temps de construire
+      elles-mêmes : site web, agent WhatsApp, automatisation des tâches répétitives.
+      Livré en 5 jours à 2 semaines.
+    </p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary btn--lg" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">
+        Discuter sur WhatsApp <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="link-arrow" href="#realisations">→ Voir nos réalisations</a>
+    </div>
+    <dl class="hero__meta">
+      <div class="hero__meta-item">
+        <dt class="hero__meta-k">Déploiement</dt>
+        <dd class="hero__meta-v" style="margin:0">5 jours à 2 semaines</dd>
+      </div>
+      <div class="hero__meta-item">
+        <dt class="hero__meta-k">Basés au</dt>
+        <dd class="hero__meta-v" style="margin:0">Grand Tunis, Tunisie</dd>
+      </div>
+      <div class="hero__meta-item">
+        <dt class="hero__meta-k">Support</dt>
+        <dd class="hero__meta-v" style="margin:0">WhatsApp</dd>
+      </div>
+    </dl>
+  </div>
+</section>
 
+<section class="trust">
+  <div class="container trust__inner">
+    <span class="trust__dot" aria-hidden="true"></span>
+    <span><strong>Nos systèmes tournent aujourd'hui</strong> pour une agence de location de voitures et une agence immobilière en Tunisie. Réponse en moins d'une heure sur WhatsApp.</span>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// CE QU'ON DÉPLOIE</span>
+      <h2>Trois systèmes.<br /><span class="accent">Un seul objectif : arrêter de perdre des clients.</span></h2>
+    </div>
+    <div class="grid-jobs">
+
+      <article class="jcard reveal">
+        <div class="jcard__mock">
+          <div class="mock-browser__bar">
+            <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
+            <span class="mock-browser__url">votreentreprise.tn</span>
+          </div>
+          <div class="mock-browser__body">
+            <div class="mock-browser__line" style="width:80%"></div>
+            <div class="mock-browser__line mock-browser__line--accent"></div>
+            <div class="mock-browser__line" style="width:55%"></div>
+            <span class="mock-browser__btn">Nous contacter</span>
+          </div>
+        </div>
+        <h3>Site web qui convertit</h3>
+        <p class="jcard__body">Rapide, lisible sur mobile, construit pour pousser le visiteur vers un appel ou un message WhatsApp au lieu de le laisser repartir chez le concurrent suivant dans Google.</p>
+        <a class="link-arrow" href="services/site-web.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard reveal" style="transition-delay:60ms">
+        <div class="jcard__mock">
+          <div class="mock-chat">
+            <div class="mock-chat__time">22:47</div>
+            <div class="mock-chat__bubble mock-chat__bubble--in">Bonsoir, vous faites encore des devis ce soir ?</div>
+            <div class="mock-chat__bubble mock-chat__bubble--out">Oui ! Dites moi le service et votre ville, je vous prépare ça et un conseiller vous rappelle demain matin.</div>
+            <div class="mock-chat__bubble mock-chat__bubble--in">Nettoyage bureau, Sousse</div>
+          </div>
+        </div>
+        <h3>Agent WhatsApp 24h sur 24</h3>
+        <p class="jcard__body">Répond à vos clients à 23h, capture leurs coordonnées et le détail de la demande, et prend le rendez vous pendant que votre équipe dort.</p>
+        <a class="link-arrow" href="services/agent-whatsapp.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard reveal" style="transition-delay:120ms">
+        <div class="jcard__mock">
+          <div class="mock-maps">
+            <div class="mock-maps__result">
+              <span class="mock-maps__pin">1</span>
+              <div class="mock-maps__lines">
+                <div class="mock-browser__line" style="width:70%"></div>
+                <div class="mock-maps__stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="mock-maps__result">
+              <span class="mock-maps__pin" style="background:var(--border);color:var(--fg-muted)">2</span>
+              <div class="mock-maps__lines">
+                <div class="mock-browser__line" style="width:55%"></div>
+              </div>
+            </div>
+            <div class="mock-maps__result">
+              <span class="mock-maps__pin" style="background:var(--border);color:var(--fg-muted)">3</span>
+              <div class="mock-maps__lines">
+                <div class="mock-browser__line" style="width:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Visible sur Google Maps</h3>
+        <p class="jcard__body">Fiche Google optimisée pour sortir dans les trois premiers résultats quand un client cherche votre service près de chez lui.</p>
+        <a class="link-arrow" href="services/google-maps.html">→ Voir le service</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="cas">
+  <div class="container">
+    <div class="case">
+      <div class="case__col reveal">
+        <span class="eyebrow">// CE QUI TOURNE DÉJÀ</span>
+        <h2 style="margin-bottom:20px">Un moteur qui tourne 24h sur 24<br /><span class="accent">pour une société d'outsourcing basée à Tunis.</span></h2>
+        <p class="lede" style="margin-bottom:0">
+          Le système repère les entreprises qui ont besoin du service, trouve le bon contact,
+          envoie un message personnalisé, relance automatiquement, et s'arrête dès qu'une réponse
+          arrive. L'opérateur garde la main sur les échanges, le système fait le reste.
+        </p>
+      </div>
+      <div class="case__col reveal" style="transition-delay:60ms">
+        <div class="case__stats">
+          <div class="stat">
+            <div class="stat__num">4h/jour</div>
+            <div class="stat__label">de temps récupéré pour l'opérateur, chaque jour</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">100+</div>
+            <div class="stat__label">messages personnalisés envoyés par jour, contre 20 à 25 à la main</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">24/7</div>
+            <div class="stat__label">le système tourne en continu, sans pause</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">-50%</div>
+            <div class="stat__label">moins cher qu'une embauche à temps plein, pour plus de volume</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="realisations">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// RÉALISATIONS</span>
+      <h2>Ce qu'on a livré,<br /><span class="accent">pas ce qu'on promet.</span></h2>
+    </div>
+    <div class="grid-3">
+      <article class="rcard reveal">
+        <div class="rcard__thumb">bosscartn.com</div>
+        <div class="rcard__body">
+          <span class="rcard__tag">Site web + Google Maps</span>
+          <h3>Boss Car, location de voitures</h3>
+          <p class="rcard__desc">Site en ligne et fiche Google Maps optimisée pour une agence de location de voitures tunisienne. Le site est actif et sert des clients aujourd'hui.</p>
+          <a class="link-arrow" href="https://bosscartn.com" target="_blank" rel="noopener noreferrer">→ Voir le site</a>
+        </div>
+      </article>
+      <article class="rcard reveal" style="transition-delay:60ms">
+        <div class="rcard__thumb">Agence immobilière</div>
+        <div class="rcard__body">
+          <span class="rcard__tag">Site web + infrastructure IA</span>
+          <h3>Agence immobilière en Tunisie</h3>
+          <p class="rcard__desc">Site web et infrastructure IA construits pour une agence immobilière tunisienne. Déployé et en service.</p>
+        </div>
+      </article>
+      <article class="rcard reveal" style="transition-delay:120ms">
+        <div class="rcard__thumb">Votre projet</div>
+        <div class="rcard__body">
+          <span class="rcard__tag">Prochain déploiement</span>
+          <h3>Votre projet ici</h3>
+          <p class="rcard__desc">Écrivez nous sur WhatsApp, on regarde ce qui vous ferait gagner le plus de temps et on vous dit franchement si ça vaut le coup.</p>
+          <a class="btn btn--primary" style="margin-top:auto" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// COMMENT ÇA MARCHE</span>
+      <h2>Trois étapes.<br /><span class="accent">Aucune surprise.</span></h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step__num">01</div>
+        <h3>Appel découverte et audit</h3>
+        <p class="step__body">On comprend votre activité et où l'IA vous ferait gagner le plus de temps et d'argent. 30 minutes, sans engagement.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">02</div>
+        <h3>Déploiement</h3>
+        <p class="step__body">On construit votre système, site web, agent WhatsApp ou automatisation. 5 jours pour un site, 2 semaines pour un système complet. Vous validez, on lance.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">03</div>
+        <h3>Suivi</h3>
+        <p class="step__body">Vous recevez la documentation complète et la propriété totale. Support post lancement en français, sur WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="probleme">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// LE PROBLÈME</span>
+      <h2>Le piège du travail manuel.</h2>
+      <p class="lede">Quatre situations que vivent les PME tunisiennes chaque jour. La plupart les acceptent comme le coût de faire des affaires. Ce n'est plus le cas.</p>
+    </div>
+    <div class="grid-4">
+      <article class="pcard reveal">
+        <div class="pcard__tag">01</div>
+        <h3>Vous êtes invisibles en ligne</h3>
+        <p class="pcard__body">Vous avez un bon service, mais quand un client vous cherche sur Google, il trouve un site qui date de 2015, ou rien du tout. Le concurrent avec un site moderne capture le client que vous méritiez.</p>
+        <div class="pcard__metric">80% des clients cherchent en ligne avant d'acheter</div>
+      </article>
+      <article class="pcard reveal" style="transition-delay:60ms">
+        <div class="pcard__tag">02</div>
+        <h3>Vous voulez l'IA, mais ne savez pas par où commencer</h3>
+        <p class="pcard__body">Vous voyez l'IA partout, vos concurrents commencent à l'utiliser. Vous savez qu'elle peut vous aider, mais pas comment l'appliquer chez vous, ni combien investir pour quels résultats.</p>
+        <div class="pcard__metric">ChatGPT n'est pas un système</div>
+      </article>
+      <article class="pcard reveal" style="transition-delay:120ms">
+        <div class="pcard__tag">03</div>
+        <h3>Vous perdez des clients après 18h</h3>
+        <p class="pcard__body">Un client écrit sur WhatsApp à 21h, personne ne répond. Le lendemain il a déjà acheté ailleurs. Vos heures d'ouverture couvrent une petite partie de la journée, le reste est du chiffre d'affaires invisible.</p>
+        <div class="pcard__metric">65% des heures de la journée sans couverture</div>
+      </article>
+      <article class="pcard reveal" style="transition-delay:180ms">
+        <div class="pcard__tag">04</div>
+        <h3>Votre équipe répète les mêmes tâches</h3>
+        <p class="pcard__body">Répondre aux mêmes questions, relancer les paiements, confirmer les rendez vous, trier les demandes. Des heures chaque semaine consommées par des tâches qu'un système peut faire en arrière plan, sans erreur.</p>
+        <div class="pcard__metric">20 à 30 heures par semaine perdues</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// FAQ</span>
+      <h2>Tout ce que vous devez savoir<br /><span class="accent">avant de déployer.</span></h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Je peux pas juste utiliser ChatGPT directement ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>ChatGPT est un outil, nous construisons un système. ChatGPT répond quand vous lui parlez. Notre système répond à vos clients sur WhatsApp 24h sur 24, capture leurs informations, prend des rendez vous et fait des relances automatiquement, sans que vous interveniez.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Combien ça coûte vraiment ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Ça dépend de ce qu'on déploie et de la taille du projet. On ne donne pas de tarif générique, un site n'a rien à voir avec un agent WhatsApp complet. Écrivez nous sur WhatsApp ou réservez un appel, on regarde votre cas et on vous chiffre ça clairement.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Combien de temps pour déployer ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Un site web : environ 5 jours ouvrés. Un agent WhatsApp : environ 2 semaines. Une automatisation sur mesure : 2 à 3 semaines selon la complexité. Ce sont des engagements, pas des estimations vagues.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>J'ai besoin d'un développeur pour utiliser ça ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Non. Tout est configuré, déployé et géré par nous. Vous utilisez vos outils habituels : WhatsApp, votre site, votre email. Le système travaille en arrière plan, aucune compétence technique requise de votre côté.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Et si quelque chose se casse et vous n'êtes pas disponibles ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Chaque déploiement inclut de la documentation et un support WhatsApp en français. On est à Tunis, même fuseau horaire, mêmes jours ouvrés. Pas de support à 4h du matin par email en anglais.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Mes données sont elles sécurisées ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Oui. Les données sont stockées de manière sécurisée et ne sont jamais partagées avec des tiers. On applique les mêmes standards que pour n'importe quel client européen ou américain.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Travaillez vous partout en Tunisie ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Oui. On travaille à distance avec des clients partout dans le pays, de Tunis à Sfax à Sousse. Les échanges se font en visio ou par téléphone, le déploiement ne demande pas de présence physique.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>Le site m'appartient il vraiment ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Oui, entièrement. Vous recevez le code, les accès et la documentation. Rien n'est verrouillé chez nous, si un jour vous voulez changer de prestataire, vous partez avec tout.</p></div></div>
+      </div>
+    </div>
+
+    <div class="faq__footer reveal">
+      <div class="faq__footer-text">
+        <h3>Vous avez encore des questions ?</h3>
+        <p>On répond au reste pendant un appel découverte de 30 minutes. Pas de vente forcée.</p>
+      </div>
+      <a class="btn btn--primary" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section final section--blue" id="commencer">
+  <div class="container final__inner reveal">
+    <span class="eyebrow">// COMMENCER</span>
+    <h2>Chaque semaine sans automatisation,<br /><span class="accent">c'est du chiffre d'affaires perdu à vie.</span></h2>
+    <p class="lede">Pendant que vous hésitez, vos concurrents déploient des systèmes qui travaillent pendant qu'ils dorment. La bonne nouvelle, on déploie en 5 jours à 2 semaines.</p>
+    <div class="final__ctas">
+      <a class="btn btn--primary btn--lg wa-btn" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">
+        Discuter sur WhatsApp
+      </a>
+      <a class="btn btn--lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">
+        Réserver un appel <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+    <p class="final__note">Appel de 30 min, ou écrivez nous à adam@krateon.tn</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="#top" class="logo">
+          <span class="logo__mark" aria-hidden="true"><img src="krateon-icon.svg" alt="" /></span>
+          <span>KRATEON.TN</span>
+        </a>
+        <p class="footer__tag">L'agence IA des PME tunisiennes.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="#top">Accueil</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Services</div>
+        <div class="footer__links">
+          <a href="services/site-web.html">Site web</a>
+          <a href="services/agent-whatsapp.html">Agent WhatsApp</a>
+          <a href="services/google-maps.html">Google Maps</a>
+          <a href="services/automatisation.html">Automatisation</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__grid" style="margin-top:32px">
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:adam@krateon.tn">adam@krateon.tn</a>
+          <a href="https://wa.me/21690005510">+216 90 005 510</a>
+          <span style="color:var(--fg-muted)">Local numéro 10, Centre Commercial et Culturel X, Ariana 2092, Tunisie</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Krateon.tn</div>
+      <div class="footer__legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
