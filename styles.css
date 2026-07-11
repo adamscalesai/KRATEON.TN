@@ -1739,3 +1739,332 @@ body.motion-off .hero__node { animation: none; }
 }
 .cs-mechanism__step h3 { font-size: 17px; margin-bottom: 6px; }
 .cs-mechanism__step p { margin: 0; color: var(--fg-muted); font-size: 15px; line-height: 1.6; }
+
+/* =========================================================
+   v5 additions: real logos, live-link cards, workflow canvas,
+   Krateon.ai bridge, motion polish
+   ========================================================= */
+
+/* ---- Client logo strip: real logos ---- */
+.logos__chip--logo {
+  padding: 6px 20px;
+  min-width: 96px;
+  justify-content: center;
+}
+.logos__chip--logo img {
+  height: 26px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+.logos__chip--dark {
+  background: #16302B;
+  border-color: #16302B;
+}
+.logos__chip--dark:hover { border-color: #A38560; }
+.logos__chip--dark img { height: 34px; }
+
+/* ---- Case-page logo badge (hero) ---- */
+.cs-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  margin-bottom: 20px;
+}
+.cs-logo-badge img { height: 24px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.cs-logo-badge--dark { background: #16302B; border-color: #16302B; }
+.cs-logo-badge--dark img { height: 30px; }
+
+/* ---- Réalisations card: outbound "voir le site" link ---- */
+.rcard__site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "DM Mono", monospace;
+  font-size: 12.5px;
+  color: var(--fg-muted);
+  margin-top: 6px;
+  transition: color 200ms var(--ease);
+}
+.rcard__site-link:hover { color: var(--accent); }
+.rcard__site-link svg { flex-shrink: 0; }
+
+/* ---- Case visual: browser-frame styled screenshot container ---- */
+.cs-browser {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 24px 60px -30px rgba(0,0,0,0.25);
+}
+.cs-browser__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.cs-browser__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.cs-browser__url {
+  margin-left: 8px;
+  font-family: "DM Mono", monospace;
+  font-size: 12.5px;
+  color: var(--fg-muted);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  flex: 1;
+  max-width: 320px;
+}
+.cs-browser__body { background: #f4f4f4; display: flex; align-items: center; justify-content: center; max-height: 560px; overflow: hidden; }
+.cs-browser__body img { width: 100%; height: auto; display: block; object-fit: cover; object-position: top center; max-height: 560px; }
+.cs-visual-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 40px;
+}
+@media (max-width: 860px) { .cs-visual-row { grid-template-columns: 1fr; } }
+.cs-visual-side {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.cs-visual-side img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.cs-visual-caption {
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-top: 10px;
+}
+.cs-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  padding-bottom: 3px;
+  transition: border-color 200ms var(--ease);
+}
+.cs-live-link:hover { border-color: var(--accent); }
+
+/* ---- Krateon.ai bridge band ---- */
+.bridge {
+  padding-block: clamp(56px, 7vw, 88px);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+}
+.bridge__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 800px) {
+  .bridge__inner { grid-template-columns: 1fr; text-align: left; }
+}
+.bridge__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+.bridge__badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.bridge__text { max-width: 62ch; }
+.bridge__text p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--fg-muted); }
+.bridge__text strong { color: var(--fg); font-weight: 500; }
+.bridge__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 22px;
+  white-space: nowrap;
+  transition: border-color 200ms var(--ease), color 200ms var(--ease), transform 200ms var(--ease);
+}
+.bridge__cta:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* ---- Motion polish: gradient headline words ---- */
+.grad-text {
+  background: linear-gradient(100deg, var(--accent) 0%, #8B5CF6 55%, var(--accent) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .grad-text {
+      animation: gradTextShift 6s ease-in-out infinite alternate;
+    }
+  }
+}
+@keyframes gradTextShift {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
+}
+@media (prefers-reduced-motion: reduce) { .grad-text { animation: none !important; } }
+
+/* ---- Motion polish: drifting glow orbs (reuses .section-decor host) ---- */
+.section-decor__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.5;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-decor__glow { animation: glowDrift 14s ease-in-out infinite alternate; }
+}
+@keyframes glowDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(24px, -18px) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) { .section-decor__glow { animation: none !important; } }
+
+/* ---- Motion polish: animated border-gradient on card hover ---- */
+.jcard, .rcard, .segcard, .bcard, .trust-card {
+  position: relative;
+}
+.jcard::before, .rcard::before, .segcard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, var(--accent), #8B5CF6, var(--accent));
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms var(--ease);
+  pointer-events: none;
+}
+.jcard:hover::before, .rcard:hover::before, .segcard:hover::before {
+  opacity: 1;
+  animation: borderGradientShift 3s linear infinite;
+}
+@keyframes borderGradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jcard:hover::before, .rcard:hover::before, .segcard:hover::before { animation: none !important; }
+}
+
+/* =========================================================
+   Automation workflow canvas (n8n-style animated node graph)
+   ========================================================= */
+.workflow {
+  position: relative;
+  padding-block: clamp(72px, 9vw, 120px);
+  background: #0B0D12;
+  color: #F4F4F5;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.workflow__dotgrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 90%);
+  pointer-events: none;
+}
+.workflow__head { max-width: 760px; margin-bottom: clamp(48px, 6vw, 72px); position: relative; z-index: 1; }
+.workflow__head .eyebrow { color: rgba(244,244,245,0.55); }
+.workflow__head h2 { color: #F4F4F5; }
+.workflow__head p { color: rgba(244,244,245,0.68); font-size: clamp(15.5px, 1.2vw, 17px); line-height: 1.6; max-width: 62ch; margin-top: 16px; }
+
+.workflow__canvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.workflow__canvas svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.wf-connector {
+  fill: none;
+  stroke: rgba(255,255,255,0.16);
+  stroke-width: 1.5;
+}
+.wf-pulse {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 10 340;
+  stroke-dashoffset: 0;
+  opacity: 0;
+}
+.workflow.is-active .wf-pulse {
+  opacity: 1;
+  animation: wfPulseTravel 2.6s linear infinite;
+}
+.wf-pulse[data-delay="1"] { animation-delay: 0.4s !important; }
+.wf-pulse[data-delay="2"] { animation-delay: 0.8s !important; }
+.wf-pulse[data-delay="3"] { animation-delay: 1.2s !important; }
+.wf-pulse[data-delay="4"] { animation-delay: 1.6s !important; }
+@keyframes wfPulseTravel {
+  from { stroke-dashoffset: 350; }
+  to   { stroke-dashoffset: -350; }
+}
+
+.wf-node {
+  fill: rgba(255,255,255,0.04);
+  stroke: rgba(255,255,255,0.16);
+  stroke-width: 1.2;
+  transition: fill 500ms var(--ease), stroke 500ms var(--ease);
+}
+.wf-node-icon { opacity: 0.55; transition: opacity 500ms var(--ease); }
+.wf-node-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12.5px;
+  fill: rgba(244,244,245,0.62);
+  transition: fill 500ms var(--ease);
+}
+.wf-node-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 9.5px;
+  fill: rgba(244,244,245,0.32);
+}
+.workflow.is-active .wf-node.is-lit {
+  fill: color-mix(in oklab, var(--accent) 16%, rgba(255,255,255,0.05));
+  stroke: var(--accent);
+}
+.workflow.is-active .wf-node.is-lit + .wf-node-icon,
+.workflow.is-active g.is-lit .wf-node-icon { opacity: 1; }
+.workflow.is-active g.is-lit .wf-node-label { fill: #fff; }
+.workflow.is-active g.is-lit .wf-node { fill: color-mix(in oklab, var(--accent) 18%, rgba(255,255,255,0.05)); stroke: var(--accent); filter: drop-shadow(0 0 12px color-mix(in oklab, var(--accent) 55%, transparent)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-pulse { animation: none !important; opacity: 0.6 !important; }
+  .workflow.is-active g.is-lit .wf-node { filter: none; }
+}
+
+@media (max-width: 640px) {
+  .workflow__canvas { max-width: 100%; }
+}

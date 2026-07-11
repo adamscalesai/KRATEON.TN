@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 135" width="320" height="270">
+  <!-- House outline -->
+  <path d="M52,88 L52,42 L80,12 L108,42 L108,88 Z" fill="none" stroke="#A38560" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="square"/>
+  <!-- Base line -->
+  <line x1="52" y1="88" x2="108" y2="88" stroke="#A38560" stroke-width="2.4"/>
+  <!-- Arch door -->
+  <path d="M66,88 L66,64 Q66,52 80,52 Q94,52 94,64 L94,88" fill="none" stroke="#A38560" stroke-width="2.4" stroke-linecap="square"/>
+  <!-- V window above door -->
+  <path d="M75,44 L80,50 L85,44" fill="none" stroke="#C4A47A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Divider line -->
+  <line x1="38" y1="102" x2="122" y2="102" stroke="#A38560" stroke-width="0.6" opacity="0.4"/>
+  <!-- VILLA NOVA -->
+  <text x="80" y="116" text-anchor="middle" dominant-baseline="central" font-family="Georgia,'Times New Roman',serif" font-size="14" fill="#F8F5F0" letter-spacing="5">VILLA NOVA</text>
+  <!-- HOLDINGS -->
+  <text x="80" y="130" text-anchor="middle" dominant-baseline="central" font-family="Georgia,'Times New Roman',serif" font-size="7" fill="#A38560" letter-spacing="6">HOLDINGS</text>
+</svg>

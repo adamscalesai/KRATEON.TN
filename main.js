@@ -138,6 +138,49 @@
     }
   }
 
+  /* ---- Automation workflow canvas: activate + cycle node lighting ---- */
+  var workflow = document.querySelector(".workflow");
+  if (workflow) {
+    var wfNodes = workflow.querySelectorAll(".wf-node-group");
+    var activateWorkflow = function () {
+      workflow.classList.add("is-active");
+    };
+    if ("IntersectionObserver" in window) {
+      var wfIo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              activateWorkflow();
+              wfIo.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+      wfIo.observe(workflow);
+    } else {
+      activateWorkflow();
+    }
+
+    if (wfNodes.length && !reduceMotion) {
+      var wfCycleMs = 2600; /* matches wfPulseTravel duration */
+      var wfLastIndex = -1;
+      function wfTick(ts) {
+        var phase = (ts % wfCycleMs) / wfCycleMs;
+        var idx = Math.floor(phase * wfNodes.length);
+        if (idx !== wfLastIndex) {
+          wfNodes.forEach(function (n) { n.classList.remove("is-lit"); });
+          wfNodes[idx].classList.add("is-lit");
+          wfLastIndex = idx;
+        }
+        window.requestAnimationFrame(wfTick);
+      }
+      window.requestAnimationFrame(wfTick);
+    } else if (wfNodes.length) {
+      wfNodes.forEach(function (n) { n.classList.add("is-lit"); });
+    }
+  }
+
   /* ---- Hero parallax (mouse-tracked) ---- */
   var parallax = document.querySelector(".hero__parallax");
   var heroCards = document.querySelector(".hero__cards");
