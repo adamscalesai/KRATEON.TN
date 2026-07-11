@@ -350,6 +350,33 @@ body.motion-off .hero__node { animation: none; }
   font-weight: 500;
 }
 
+/* ---- Marquee strip ---- */
+.marquee {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding-block: 16px;
+}
+.marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__item {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  color: var(--fg-muted);
+  white-space: nowrap;
+  padding-inline: 14px;
+}
+.marquee__dot { color: var(--border-hover); opacity: 0.6; }
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ---- Trust strip ---- */
 .trust {
   padding-block: 28px;
@@ -472,6 +499,52 @@ body.motion-off .hero__node { animation: none; }
   align-self: flex-end;
   border-bottom-right-radius: 3px;
   color: #111;
+}
+
+/* sequential reveal of the chat mockup, triggered when the parent .jcard scrolls into view */
+.mock-anim {
+  opacity: 0;
+  animation: chatFadeIn 420ms var(--ease) forwards;
+  animation-delay: var(--d, 0ms);
+  animation-play-state: paused;
+}
+.jcard.is-in .mock-anim { animation-play-state: running; }
+@keyframes chatFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mock-chat__typing {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 4px;
+  padding: 9px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  border-bottom-left-radius: 3px;
+}
+.mock-chat__typing span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--fg-muted);
+  animation: typingDot 1s ease-in-out infinite;
+}
+.mock-chat__typing span:nth-child(2) { animation-delay: 0.15s; }
+.mock-chat__typing span:nth-child(3) { animation-delay: 0.3s; }
+.mock-chat__typing.mock-anim {
+  animation-name: typingInOut;
+  animation-duration: 900ms;
+}
+@keyframes typingInOut {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes typingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-3px); opacity: 1; }
 }
 
 /* mini google maps local pack mockup */
@@ -664,6 +737,63 @@ body.motion-off .hero__node { animation: none; }
 .rcard h3 { font-size: 21px; line-height: 1.25; }
 .rcard__desc { color: var(--fg-muted); font-size: 15px; line-height: 1.6; flex: 1; }
 
+/* ---- Pour qui : segment cards ---- */
+.grid-seg { align-items: stretch; }
+.segcard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: border-color 280ms var(--ease), transform 280ms var(--ease), box-shadow 280ms var(--ease);
+}
+.segcard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(420px 220px at 20% -10%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 320ms var(--ease);
+  pointer-events: none;
+  z-index: -1;
+}
+.segcard:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -18px rgba(59,130,246,0.32);
+}
+.segcard:hover::before { opacity: 1; }
+.segcard__tag {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.segcard h3 { font-size: 20px; line-height: 1.25; }
+.segcard__body { color: var(--fg-muted); font-size: 15px; line-height: 1.6; flex: 1; }
+
+/* ---- Témoignages (structure ready, hidden until real quotes exist) ---- */
+.testimonials--hidden { display: none; }
+.tcard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tcard__quote { font-size: 16.5px; line-height: 1.6; color: var(--fg); margin: 0; }
+.tcard__author { display: flex; flex-direction: column; gap: 2px; }
+.tcard__name { font-weight: 500; font-size: 14.5px; }
+.tcard__company { font-size: 13px; color: var(--fg-muted); }
+
 /* ---- FAQ ---- */
 .faq {
   border-top: 1px solid var(--border);
@@ -784,9 +914,12 @@ body.motion-off .hero__node { animation: none; }
 }
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 40px;
   align-items: start;
+}
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .footer__grid { grid-template-columns: 1fr; gap: 32px; }
@@ -917,6 +1050,11 @@ body.motion-off .hero__node { animation: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .logo__mark img { animation: none !important; }
+  .marquee__track { animation: none !important; }
+  .mock-anim { animation: none !important; opacity: 1 !important; }
+  .mock-chat__typing { display: none !important; }
+  .mock-chat__typing span { animation: none !important; }
+  .segcard, .segcard::before { transition: none !important; }
 }
 
 /* ---- Service page hero (simpler, no motion graphic needed) ---- */

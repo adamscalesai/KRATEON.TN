@@ -51,6 +51,47 @@
     });
   }
 
+  /* ---- Count-up on case study stats ---- */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var countEls = document.querySelectorAll(".stat__num[data-countup]");
+  if (countEls.length) {
+    var animateCount = function (el) {
+      var target = parseInt(el.getAttribute("data-countup"), 10) || 0;
+      var suffix = el.getAttribute("data-suffix") || "";
+      if (reduceMotion) {
+        el.textContent = target + suffix;
+        return;
+      }
+      var duration = 900;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = Math.round(eased * target);
+        el.textContent = value + suffix;
+        if (progress < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    };
+    if ("IntersectionObserver" in window) {
+      var countIo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              animateCount(e.target);
+              countIo.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      countEls.forEach(function (el) { countIo.observe(el); });
+    } else {
+      countEls.forEach(animateCount);
+    }
+  }
+
   /* ---- Hero parallax (mouse-tracked) ---- */
   var parallax = document.querySelector(".hero__parallax");
   if (parallax && window.matchMedia("(pointer: fine)").matches) {
