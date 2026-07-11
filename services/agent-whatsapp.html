@@ -62,12 +62,12 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../services/site-web.html">Sites web</a>
           <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
-          <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
+          <a aria-current="page" role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
           <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
@@ -143,6 +143,32 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">C'est le système qui équipe les <a class="link-arrow" href="../solutions/agences.html">agences de voyage et immobilières</a> pour ne plus perdre une demande de réservation la nuit, et les <a class="link-arrow" href="../solutions/services-locaux.html">commerces et services locaux</a> qui veulent répondre après la fermeture. Même logique côté B2B avec l'agent SDR : voir <a class="link-arrow" href="../realisations/telesupport.html">l'étude de cas Telesupport</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// LA CONVERSATION, EN TEMPS REEL</span>
+      <div class="svc-diagram__frame">
+        <div class="chat-demo">
+          <div class="chat-demo__time diagram-anim" style="--d:0ms">22:47</div>
+          <div class="chat-demo__row chat-demo__row--in diagram-anim" style="--d:200ms">
+            <div class="chat-demo__bubble">Bonsoir, vous faites encore des devis ce soir ?</div>
+            <span class="chat-demo__stamp">22:47</span>
+          </div>
+          <div class="chat-demo__row chat-demo__row--out diagram-anim" style="--d:900ms">
+            <div class="chat-demo__bubble">Oui ! Dites moi le service et votre ville, je vous prépare ça et un conseiller vous rappelle demain matin.</div>
+            <span class="chat-demo__stamp">22:47</span>
+          </div>
+          <div class="chat-demo__row chat-demo__row--in diagram-anim" style="--d:1600ms">
+            <div class="chat-demo__bubble">Nettoyage bureau, Sousse</div>
+            <span class="chat-demo__stamp">22:48</span>
+          </div>
+          <div class="chat-demo__row chat-demo__row--out diagram-anim" style="--d:2300ms">
+            <div class="chat-demo__bubble">Parfait, je vous bloque un créneau demain 10h. Vous recevrez la confirmation ici.</div>
+            <span class="chat-demo__stamp">22:48</span>
+          </div>
+          <span class="chat-demo__badge diagram-anim" style="--d:3000ms">RDV confirmé ✓</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

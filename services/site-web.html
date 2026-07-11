@@ -62,10 +62,10 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="../services/site-web.html">Sites web</a>
+          <a aria-current="page" role="menuitem" href="../services/site-web.html">Sites web</a>
           <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
           <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
           <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
@@ -143,6 +143,30 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">Un site sans fiche <a class="link-arrow" href="../services/google-maps.html">Google Maps optimisée</a> ne capte que la moitié du trafic local. Pour une <a class="link-arrow" href="../solutions/agences.html">agence de voyage ou immobilière</a>, on couple souvent le site à un agent WhatsApp qui capture les demandes hors horaires. Voir un exemple livré : <a class="link-arrow" href="../realisations/alkarama.html">le site d'Alkarama Tourisme</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// LA PAGE SE CONSTRUIT, PUIS LE VISITEUR CLIQUE</span>
+      <div class="svc-diagram__frame">
+        <div class="assembly">
+          <div class="assembly__bar">
+            <span class="assembly__dot"></span><span class="assembly__dot"></span><span class="assembly__dot"></span>
+            <span class="assembly__url">votreentreprise.tn</span>
+          </div>
+          <div class="assembly__body">
+            <div class="assembly__block assembly__block--hero diagram-anim" style="--d:0ms"></div>
+            <div class="assembly__block assembly__block--wide diagram-anim" style="--d:300ms; margin-top:14px"></div>
+            <div class="assembly__block assembly__block--accent diagram-anim" style="--d:520ms"></div>
+            <div class="assembly__block assembly__block--half diagram-anim" style="--d:740ms"></div>
+            <div class="assembly__cta-row diagram-anim" style="--d:980ms">
+              <span class="assembly__cta">Nous contacter sur WhatsApp</span>
+            </div>
+            <span class="assembly__cursor" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="#18181B"><path d="M1 1l5.5 13 1.8-5.2L13.5 7z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

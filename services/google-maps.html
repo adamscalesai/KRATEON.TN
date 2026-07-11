@@ -61,11 +61,11 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../services/site-web.html">Sites web</a>
-          <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
+          <a aria-current="page" role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
           <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
           <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
@@ -142,6 +142,36 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">On corrige d'abord la fiche, puis souvent le <a class="link-arrow" href="../services/site-web.html">site web</a> vers lequel elle pointe. Sujet fréquent chez les <a class="link-arrow" href="../solutions/services-locaux.html">commerces et services locaux</a> et les <a class="link-arrow" href="../solutions/agences.html">agences</a> : voir l'exemple <a class="link-arrow" href="../realisations/alkarama.html">Alkarama Tourisme</a>, fiche Google Maps en cours d'optimisation.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// AVANT / APRES DANS LE PACK LOCAL</span>
+      <div class="svc-diagram__frame">
+        <div class="gmaps-demo">
+          <div class="gmaps-demo__search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <span class="gmaps-demo__typed">agence voyage ariana</span>
+          </div>
+          <div class="gmaps-demo__result diagram-anim" style="--d:2000ms">
+            <span class="gmaps-demo__pin">1</span>
+            <div class="gmaps-demo__lines">
+              <div class="mock-browser__line" style="width:66%"></div>
+              <span class="gmaps-demo__stars">★★★★★</span>
+            </div>
+          </div>
+          <div class="gmaps-demo__result diagram-anim" style="--d:2150ms">
+            <span class="gmaps-demo__pin">2</span>
+            <div class="gmaps-demo__lines"><div class="mock-browser__line" style="width:52%"></div></div>
+          </div>
+          <div class="gmaps-demo__result gmaps-demo__result--client diagram-anim" style="--d:2300ms">
+            <span class="gmaps-demo__pin">3</span>
+            <div class="gmaps-demo__lines">
+              <div class="mock-browser__line mock-browser__line--accent" style="width:60%"></div>
+              <span class="gmaps-demo__stars">★★★★★ <span class="gmaps-demo__spark">✦</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

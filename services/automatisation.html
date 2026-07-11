@@ -61,13 +61,13 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../services/site-web.html">Sites web</a>
           <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
           <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
-          <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
+          <a aria-current="page" role="menuitem" href="../services/automatisation.html">Automatisation</a>
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
@@ -142,6 +142,29 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">C'est le même moteur que celui utilisé pour la prospection B2B chez <a class="link-arrow" href="../realisations/telesupport.html">Telesupport</a>. Pour une équipe de taille plus importante, voir la solution <a class="link-arrow" href="../solutions/entreprises.html">Entreprises</a>, qui combine automatisation et <a class="link-arrow" href="../services/back-office.html">back-office sur mesure</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// LES TÂCHES TRAVERSENT LE SYSTÈME EN CONTINU</span>
+      <div class="svc-diagram__frame" style="max-width:600px">
+        <div class="flow-demo">
+          <div class="flow-demo__col">
+            <span class="flow-demo__col-label">Boîte de réception</span>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:0s">Relance paiement</div>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:1.2s">Confirmation RDV</div>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:2.4s">Rapport quotidien</div>
+          </div>
+          <div class="flow-demo__node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" class="flow-demo__gear"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M19.4 13a7.4 7.4 0 0 0 0-2l2-1.4-2-3.4-2.3.8a7.6 7.6 0 0 0-1.7-1L15 3.6h-4l-.4 2.4a7.6 7.6 0 0 0-1.7 1l-2.3-.8-2 3.4 2 1.4a7.4 7.4 0 0 0 0 2l-2 1.4 2 3.4 2.3-.8c.5.4 1.1.75 1.7 1l.4 2.4h4l.4-2.4c.6-.25 1.2-.6 1.7-1l2.3.8 2-3.4-2-1.4z"/></svg>
+          </div>
+          <div class="flow-demo__col">
+            <span class="flow-demo__col-label">Fait</span>
+            <div class="flow-demo__done-card"><span>Relances</span><span class="flow-demo__count stat__num" data-countup="18" data-suffix="">0</span></div>
+            <div class="flow-demo__done-card"><span>Confirmations</span><span class="flow-demo__count stat__num" data-countup="27" data-suffix="">0</span></div>
+            <div class="flow-demo__done-card"><span>Rapports</span><span class="flow-demo__count stat__num" data-countup="3" data-suffix="">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

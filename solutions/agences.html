@@ -71,11 +71,11 @@
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../solutions/services-locaux.html">Commerces et services locaux</a>
-          <a role="menuitem" href="../solutions/agences.html">Agences</a>
+          <a aria-current="page" role="menuitem" href="../solutions/agences.html">Agences</a>
           <a role="menuitem" href="../solutions/entreprises.html">Entreprises</a>
         </div>
       </div>
@@ -142,6 +142,36 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">Le pack complet ici : <a class="link-arrow" href="../services/site-web.html">site web</a>, <a class="link-arrow" href="../services/google-maps.html">fiche Google Maps</a>, <a class="link-arrow" href="../services/agent-whatsapp.html">agent WhatsApp</a>, et pour les réseaux multi-agences un <a class="link-arrow" href="../services/back-office.html">back-office de gestion</a>. Deux exemples livrés : <a class="link-arrow" href="../realisations/alkarama.html">Alkarama Tourisme</a> et <a class="link-arrow" href="../realisations/villanova.html">Villanova</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// UNE DEMANDE À MINUIT, TRAITÉE TOUT DE SUITE</span>
+      <div class="sol-diagram">
+        <div class="sol-diagram__panel diagram-anim" style="--d:0ms">
+          <span class="sol-diagram__panel-label">00:14, client</span>
+          <div class="chat-demo" style="gap:6px">
+            <div class="chat-demo__row chat-demo__row--in"><div class="chat-demo__bubble" style="font-size:12px">Dispo pour une visite samedi, appt 3 pièces ?</div></div>
+          </div>
+        </div>
+        <span class="sol-diagram__arrow" aria-hidden="true">→</span>
+        <div class="sol-diagram__panel diagram-anim" style="--d:250ms">
+          <span class="sol-diagram__panel-label">Agent WhatsApp</span>
+          <div class="chat-demo" style="gap:6px">
+            <div class="chat-demo__row chat-demo__row--out"><div class="chat-demo__bubble" style="font-size:12px">Créneau bloqué samedi 11h, confirmation envoyée.</div></div>
+          </div>
+          <span class="chat-demo__badge" style="margin-top:8px">RDV confirmé ✓</span>
+        </div>
+        <span class="sol-diagram__arrow" aria-hidden="true">→</span>
+        <div class="sol-diagram__panel diagram-anim" style="--d:500ms">
+          <span class="sol-diagram__panel-label">Équipe, 08:30</span>
+          <div class="dash-demo">
+            <div class="dash-demo__row" style="grid-template-columns:1fr auto">
+              <span>Visite, appt 3P</span>
+              <span class="dash-demo__status"><span class="is-confirmed" style="position:static;opacity:1">Confirmé ✓</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

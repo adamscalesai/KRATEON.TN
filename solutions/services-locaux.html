@@ -71,10 +71,10 @@
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="../solutions/services-locaux.html">Commerces et services locaux</a>
+          <a aria-current="page" role="menuitem" href="../solutions/services-locaux.html">Commerces et services locaux</a>
           <a role="menuitem" href="../solutions/agences.html">Agences</a>
           <a role="menuitem" href="../solutions/entreprises.html">Entreprises</a>
         </div>
@@ -142,6 +142,35 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">Le trio complet : <a class="link-arrow" href="../services/site-web.html">site web</a>, <a class="link-arrow" href="../services/google-maps.html">Google Maps</a> et <a class="link-arrow" href="../services/agent-whatsapp.html">agent WhatsApp</a>. Pour une chaîne à plusieurs points de vente, on ajoute un <a class="link-arrow" href="../services/back-office.html">back-office de suivi</a>, comme chez <a class="link-arrow" href="../realisations/alkarama.html">Alkarama Tourisme</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// TROUVÉ SUR GOOGLE, RÉPONDU SUR WHATSAPP</span>
+      <div class="sol-diagram">
+        <div class="sol-diagram__panel diagram-anim" style="--d:0ms">
+          <span class="sol-diagram__panel-label">Google Maps</span>
+          <div class="gmaps-demo__result" style="padding:0">
+            <span class="gmaps-demo__pin" style="background:var(--accent);color:#fff">1</span>
+            <div class="gmaps-demo__lines">
+              <div class="mock-browser__line mock-browser__line--accent" style="width:66%"></div>
+              <span class="gmaps-demo__stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <span class="sol-diagram__arrow" aria-hidden="true">→</span>
+        <div class="sol-diagram__panel diagram-anim" style="--d:250ms">
+          <span class="sol-diagram__panel-label">22h, samedi</span>
+          <div class="chat-demo" style="gap:6px">
+            <div class="chat-demo__row chat-demo__row--in"><div class="chat-demo__bubble" style="font-size:12px">Encore ouvert ce soir ?</div></div>
+            <div class="chat-demo__row chat-demo__row--out"><div class="chat-demo__bubble" style="font-size:12px">On rouvre demain 9h, je vous garde un créneau ?</div></div>
+          </div>
+        </div>
+        <span class="sol-diagram__arrow" aria-hidden="true">→</span>
+        <div class="sol-diagram__panel diagram-anim" style="--d:500ms">
+          <span class="sol-diagram__panel-label">Résultat</span>
+          <span class="chat-demo__badge" style="display:inline-block">RDV confirmé ✓</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

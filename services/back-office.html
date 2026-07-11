@@ -62,14 +62,14 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../services/site-web.html">Sites web</a>
           <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
           <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
           <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
-          <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
+          <a aria-current="page" role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
       <div class="nav__drop">
@@ -143,6 +143,47 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">Premier réseau à recevoir ce système : <a class="link-arrow" href="../realisations/alkarama.html">Alkarama Tourisme</a>, plus de 12 agences à travers la Tunisie. Ce service complète souvent <a class="link-arrow" href="../services/site-web.html">le site web</a> et <a class="link-arrow" href="../services/agent-whatsapp.html">l'agent WhatsApp</a> pour les <a class="link-arrow" href="../solutions/agences.html">agences de voyage et immobilières</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// LE TABLEAU DE BORD, EN DIRECT</span>
+      <div class="svc-diagram__frame" style="max-width:520px">
+        <div class="assembly">
+          <div class="assembly__bar">
+            <span class="assembly__dot"></span><span class="assembly__dot"></span><span class="assembly__dot"></span>
+            <span class="assembly__url">gestion.votreentreprise.tn</span>
+          </div>
+          <div class="dash-demo">
+            <div class="dash-demo__row diagram-anim" style="--d:0ms">
+              <span>Dupont, Voyage Djerba</span>
+              <span data-col="date">14 juil.</span>
+              <div class="mock-browser__line" style="width:60%"></div>
+              <span class="dash-demo__status"><span class="is-pending">En attente</span></span>
+            </div>
+            <div class="dash-demo__row diagram-anim" style="--d:250ms">
+              <span>Amri, Location auto</span>
+              <span data-col="date">14 juil.</span>
+              <div class="mock-browser__line" style="width:45%"></div>
+              <span class="dash-demo__status"><span class="is-pending">En attente</span></span>
+            </div>
+            <div class="dash-demo__row diagram-anim" style="--d:500ms">
+              <span>Sassi, Séjour Hammamet</span>
+              <span data-col="date">15 juil.</span>
+              <div class="mock-browser__line mock-browser__line--accent" style="width:70%"></div>
+              <span class="dash-demo__status">
+                <span class="is-pending">En attente</span>
+                <span class="is-confirmed">Confirmé ✓</span>
+              </span>
+            </div>
+            <div class="dash-demo__row diagram-anim" style="--d:2900ms">
+              <span>Ghariani, Séjour Sousse</span>
+              <span data-col="date">15 juil.</span>
+              <div class="mock-browser__line" style="width:38%"></div>
+              <span class="dash-demo__status"><span class="is-pending">Nouvelle</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

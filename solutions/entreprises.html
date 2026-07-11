@@ -71,12 +71,12 @@
           <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
-      <div class="nav__drop">
+      <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
         <div class="nav__drop-menu" role="menu">
           <a role="menuitem" href="../solutions/services-locaux.html">Commerces et services locaux</a>
           <a role="menuitem" href="../solutions/agences.html">Agences</a>
-          <a role="menuitem" href="../solutions/entreprises.html">Entreprises</a>
+          <a aria-current="page" role="menuitem" href="../solutions/entreprises.html">Entreprises</a>
         </div>
       </div>
       <div class="nav__drop">
@@ -143,6 +143,29 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">L'automatisation et l'agent SDR s'appuient sur le même moteur que celui livré chez <a class="link-arrow" href="../realisations/telesupport.html">Telesupport</a>. Voir aussi <a class="link-arrow" href="../services/automatisation.html">le service Automatisation</a> et <a class="link-arrow" href="../services/back-office.html">le back-office sur mesure</a> pour les opérations multi-sites. Le même moteur SDR tient aussi à l'échelle enterprise, voir <a class="link-arrow" href="../realisations/cloudian.html">l'étude de cas Cloudian</a>.</p>
+
+    <div class="svc-diagram reveal" aria-hidden="true">
+      <span class="svc-diagram__label">// TOUS LES CANAUX, UN SEUL SYSTÈME</span>
+      <div class="svc-diagram__frame" style="max-width:600px">
+        <div class="flow-demo">
+          <div class="flow-demo__col">
+            <span class="flow-demo__col-label">Canaux entrants</span>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:0s">WhatsApp</div>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:1.2s">Email</div>
+            <div class="flow-demo__card flow-demo__card--traveling" style="--fd:2.4s">Chat site</div>
+          </div>
+          <div class="flow-demo__node">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3"/></svg>
+          </div>
+          <div class="flow-demo__col">
+            <span class="flow-demo__col-label">Traité</span>
+            <div class="flow-demo__done-card"><span>Résolu par l'agent</span><span class="flow-demo__count stat__num" data-countup="34" data-suffix="">0</span></div>
+            <div class="flow-demo__done-card"><span>Transmis à l'équipe</span><span class="flow-demo__count stat__num" data-countup="9" data-suffix="">0</span></div>
+            <div class="flow-demo__done-card"><span>Prospects qualifiés</span><span class="flow-demo__count stat__num" data-countup="6" data-suffix="">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
