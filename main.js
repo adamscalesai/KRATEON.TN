@@ -92,6 +92,52 @@
     }
   }
 
+  /* ---- Nav dropdowns: click-toggle fallback for touch, closes on outside click ---- */
+  var drops = document.querySelectorAll(".nav__drop");
+  if (drops.length) {
+    drops.forEach(function (drop) {
+      var toggle = drop.querySelector(".nav__drop-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        var isOpen = drop.classList.contains("nav__drop--open");
+        drops.forEach(function (d) {
+          d.classList.remove("nav__drop--open");
+          var t = d.querySelector(".nav__drop-toggle");
+          if (t) t.setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          drop.classList.add("nav__drop--open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+    document.addEventListener("click", function (e) {
+      drops.forEach(function (d) {
+        if (!d.contains(e.target)) {
+          d.classList.remove("nav__drop--open");
+          var t = d.querySelector(".nav__drop-toggle");
+          if (t) t.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  }
+
+  /* ---- Hero industry carousel: crossfade every 2.5s ---- */
+  var carouselItems = document.querySelectorAll(".hero__carousel-item");
+  if (carouselItems.length > 1) {
+    var carIndex = 0;
+    if (!reduceMotion) {
+      window.setInterval(function () {
+        carouselItems[carIndex].classList.remove("is-active");
+        carIndex = (carIndex + 1) % carouselItems.length;
+        carouselItems[carIndex].classList.add("is-active");
+      }, 2500);
+    } else {
+      carouselItems.forEach(function (el, i) { el.classList.toggle("is-active", i === 0); });
+    }
+  }
+
   /* ---- Hero parallax (mouse-tracked) ---- */
   var parallax = document.querySelector(".hero__parallax");
   var heroCards = document.querySelector(".hero__cards");

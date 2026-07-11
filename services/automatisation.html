@@ -40,6 +40,17 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://krateon.tn/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://krateon.tn/#services" },
+    { "@type": "ListItem", "position": 3, "name": "Automatisation", "item": "https://krateon.tn/services/automatisation" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -50,9 +61,32 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <a class="nav__link" href="../index.html#services">Services</a>
-      <a class="nav__link" href="../index.html#pour-qui">Solutions</a>
-      <a class="nav__link" href="../index.html#realisations">Réalisations</a>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="../services/site-web.html">Sites web</a>
+          <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
+          <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
+          <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
+          <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
+        </div>
+      </div>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="../solutions/services-locaux.html">Commerces et services locaux</a>
+          <a role="menuitem" href="../solutions/agences.html">Agences</a>
+          <a role="menuitem" href="../solutions/entreprises.html">Entreprises</a>
+        </div>
+      </div>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Réalisations</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="../realisations/alkarama.html">Alkarama</a>
+          <a role="menuitem" href="../realisations/telesupport.html">Telesupport</a>
+          <a role="menuitem" href="../realisations/villanova.html">Villanova</a>
+        </div>
+      </div>
       <a class="nav__link" href="../index.html#process">Process</a>
       <a class="nav__link" href="../index.html#faq">FAQ</a>
     </nav>
@@ -106,6 +140,7 @@
         <p>Un résumé automatique de ce qui a été fait, envoyé chaque jour ou chaque semaine, sans que quelqu'un ait à le compiler à la main.</p>
       </div>
     </div>
+    <p class="lede" style="margin-top:40px">C'est le même moteur que celui utilisé pour la prospection B2B chez <a class="link-arrow" href="../realisations/telesupport.html">Telesupport</a>. Pour une équipe de taille plus importante, voir la solution <a class="link-arrow" href="../solutions/entreprises.html">Entreprises</a>, qui combine automatisation et <a class="link-arrow" href="../services/back-office.html">back-office sur mesure</a>.</p>
   </div>
 </section>
 

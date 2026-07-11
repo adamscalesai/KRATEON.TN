@@ -545,6 +545,19 @@ body.motion-off .hero__node { animation: none; }
   transform: translateY(-2px);
   box-shadow: 0 14px 30px -18px rgba(59,130,246,0.25);
 }
+.jcard--wide {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+}
+.jcard--wide .jcard__mock { flex: 0 0 320px; min-height: 130px; }
+.jcard--wide .jcard__text { display: flex; flex-direction: column; gap: 16px; }
+@media (max-width: 760px) {
+  .jcard--wide { flex-direction: column; align-items: stretch; }
+  .jcard--wide .jcard__mock { flex: none; }
+}
 .jcard h3 { font-size: 21px; }
 .jcard__body { color: var(--fg-muted); font-size: 15px; line-height: 1.55; }
 .jcard__mock {
@@ -1384,3 +1397,345 @@ body.motion-off .hero__node { animation: none; }
 @media (max-width: 375px) {
   h1 { font-size: 28px; }
 }
+
+/* ==========================================================================
+   V4 additions: nav dropdowns, client logo strip, security band, carousel
+   ========================================================================== */
+
+/* ---- Nav dropdowns (desktop hover / focus, JS click-toggle for touch) ---- */
+.nav__drop { position: relative; }
+.nav__drop-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--fg-muted);
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: color 200ms var(--ease), background 200ms var(--ease);
+}
+.nav__drop-toggle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 200ms var(--ease);
+  opacity: 0.7;
+}
+.nav__drop:hover .nav__drop-toggle,
+.nav__drop:focus-within .nav__drop-toggle,
+.nav__drop--open .nav__drop-toggle { color: var(--fg); background: var(--bg-alt); }
+.nav__drop:hover .nav__drop-toggle::after,
+.nav__drop:focus-within .nav__drop-toggle::after,
+.nav__drop--open .nav__drop-toggle::after { transform: rotate(225deg) translateY(1px); }
+
+.nav__drop-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -16px rgba(24,24,27,0.22);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease), visibility 180ms;
+  z-index: 20;
+}
+.nav__drop:hover .nav__drop-menu,
+.nav__drop:focus-within .nav__drop-menu,
+.nav__drop--open .nav__drop-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav__drop-menu a {
+  font-size: 14px;
+  color: var(--fg);
+  padding: 9px 12px;
+  border-radius: 7px;
+  transition: background 160ms var(--ease), color 160ms var(--ease);
+}
+.nav__drop-menu a:hover { background: var(--bg-alt); color: var(--accent); }
+
+@media (max-width: 768px) {
+  /* Flat list in the mobile drawer: no hover menus, everything expanded */
+  .nav__drop-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    color: var(--fg);
+    cursor: default;
+    pointer-events: none;
+  }
+  .nav__drop-toggle::after { display: none; }
+  .nav__drop-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 6px 0 6px 36px;
+    background: var(--bg-alt);
+  }
+  .nav__drop-menu a { padding: 10px 12px; font-size: 15px; }
+}
+
+/* ---- Client logo / wordmark strip ---- */
+.logos {
+  padding-block: 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.logos__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.logos__label {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.logos__row { display: flex; gap: 12px; flex-wrap: wrap; }
+.logos__chip {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--fg);
+  transition: border-color 200ms var(--ease), color 200ms var(--ease), transform 200ms var(--ease);
+}
+.logos__chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* ---- Hero industry carousel (rotating chip, crossfade) ---- */
+/* Swap-in slot: replace this text+icon carousel with real client industry
+   photos once available (see comment in index.html hero markup). */
+.hero__carousel {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+.hero__carousel-track {
+  position: relative;
+  height: 26px;
+  min-width: 160px;
+  display: inline-block;
+}
+.hero__carousel-item {
+  position: absolute;
+  left: 0; top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+  color: var(--accent);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+.hero__carousel-item.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__carousel-item { transition: none; }
+}
+
+/* ---- Security / confiance band (dark section) ---- */
+.section--dark {
+  background: #101014;
+  color: #F4F4F5;
+  border-color: rgba(255,255,255,0.08);
+}
+.section--dark .eyebrow { color: rgba(244,244,245,0.55); }
+.section--dark .lede { color: rgba(244,244,245,0.72); }
+.section--dark h2 { color: #F4F4F5; }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+@media (max-width: 760px) { .trust-grid { grid-template-columns: 1fr; } }
+.trust-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+}
+.trust-card h3 { font-size: 17px; color: #fff; margin-bottom: 8px; }
+.trust-card p { font-size: 14.5px; line-height: 1.6; color: rgba(244,244,245,0.7); margin: 0; }
+
+/* diagram: client -> systeme Krateon -> canaux, CSS only */
+.trust-diagram {
+  margin-top: clamp(40px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 36px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.03);
+}
+.trust-diagram__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+  text-align: center;
+}
+.trust-diagram__box {
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-family: "DM Mono", monospace;
+  font-size: 12.5px;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+.trust-diagram__box--accent {
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+.trust-diagram__label { font-size: 11.5px; color: rgba(244,244,245,0.55); }
+.trust-diagram__channels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.trust-diagram__chan {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: rgba(244,244,245,0.65);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.trust-diagram__arrow {
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+  position: relative;
+  flex-shrink: 0;
+  margin-inline: 4px;
+}
+.trust-diagram__arrow::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 50%;
+  width: 6px; height: 6px;
+  border-right: 1.5px solid rgba(255,255,255,0.6);
+  border-bottom: 1.5px solid rgba(255,255,255,0.6);
+  transform: translateY(-50%) rotate(-45deg);
+}
+@media (max-width: 700px) {
+  .trust-diagram { flex-direction: column; }
+  .trust-diagram__arrow { width: 1px; height: 32px; }
+  .trust-diagram__arrow::after { right: 50%; top: 0; transform: translateX(50%) rotate(45deg); }
+}
+
+/* ---- Subtle parallax drift on section decorations (transform-only) ---- */
+.section-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.section-decor__blob {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 70%);
+  will-change: transform;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section-decor__blob {
+      animation: blobDrift linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 100%;
+    }
+  }
+}
+@keyframes blobDrift {
+  from { transform: translate(-30px, -20px) scale(0.94); }
+  to   { transform: translate(30px, 24px) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-decor__blob { animation: none !important; }
+}
+
+/* ---- Réalisations card link ---- */
+.rcard__link { margin-top: auto; }
+
+/* ---- Case study pages (realisations/*.html) ---- */
+.cs-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.cs-hero__meta span {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.cs-mechanism {
+  counter-reset: mech;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.cs-mechanism__step {
+  counter-increment: mech;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cs-mechanism__step::before {
+  content: counter(mech, decimal-leading-zero);
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+.cs-mechanism__step h3 { font-size: 17px; margin-bottom: 6px; }
+.cs-mechanism__step p { margin: 0; color: var(--fg-muted); font-size: 15px; line-height: 1.6; }

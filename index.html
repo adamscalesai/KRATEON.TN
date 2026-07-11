@@ -67,6 +67,11 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "C'est quoi Krateon.tn exactement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Krateon est une agence IA basée au Grand Tunis qui construit des sites web, des agents WhatsApp et des automatisations pour les entreprises tunisiennes. On livre des systèmes qui tournent, pas des concepts." }
+    },
+    {
+      "@type": "Question",
       "name": "Je peux pas juste utiliser ChatGPT directement ?",
       "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT est un outil, nous construisons un système. ChatGPT répond quand vous lui parlez. Notre système répond à vos clients sur WhatsApp 24h sur 24, capture leurs informations, prend des rendez vous et fait des relances automatiquement, sans que vous interveniez." }
     },
@@ -118,9 +123,32 @@
       <span>KRATEON.TN</span>
     </a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <a class="nav__link" href="#services">Services</a>
-      <a class="nav__link" href="#pour-qui">Solutions</a>
-      <a class="nav__link" href="#realisations">Réalisations</a>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="services/site-web.html">Sites web</a>
+          <a role="menuitem" href="services/google-maps.html">Optimisation Google Maps</a>
+          <a role="menuitem" href="services/agent-whatsapp.html">Agents WhatsApp IA</a>
+          <a role="menuitem" href="services/automatisation.html">Automatisation</a>
+          <a role="menuitem" href="services/back-office.html">Back-office et gestion</a>
+        </div>
+      </div>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="solutions/services-locaux.html">Commerces et services locaux</a>
+          <a role="menuitem" href="solutions/agences.html">Agences</a>
+          <a role="menuitem" href="solutions/entreprises.html">Entreprises</a>
+        </div>
+      </div>
+      <div class="nav__drop">
+        <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Réalisations</button>
+        <div class="nav__drop-menu" role="menu">
+          <a role="menuitem" href="realisations/alkarama.html">Alkarama</a>
+          <a role="menuitem" href="realisations/telesupport.html">Telesupport</a>
+          <a role="menuitem" href="realisations/villanova.html">Villanova</a>
+        </div>
+      </div>
       <a class="nav__link" href="#process">Process</a>
       <a class="nav__link" href="#faq">FAQ</a>
     </nav>
@@ -226,6 +254,32 @@
         <dd class="hero__meta-v" style="margin:0">WhatsApp</dd>
       </div>
     </dl>
+    <!-- Rotating industry chip: text+icon placeholder, no client photos exist yet.
+         Swap for a real photo carousel of client industries once assets are available. -->
+    <div class="hero__carousel" aria-hidden="true">
+      <span>Déployé pour :</span>
+      <span class="hero__carousel-track">
+        <span class="hero__carousel-item is-active">🧳 Voyages</span>
+        <span class="hero__carousel-item">🏠 Immobilier</span>
+        <span class="hero__carousel-item">🩺 Cliniques</span>
+        <span class="hero__carousel-item">🍽️ Restaurants</span>
+        <span class="hero__carousel-item">🛡️ Assurance</span>
+        <span class="hero__carousel-item">📞 Outsourcing</span>
+        <span class="hero__carousel-item">🛍️ Retail</span>
+        <span class="hero__carousel-item">🎓 Éducation</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container logos__inner">
+    <span class="logos__label">// ILS NOUS FONT CONFIANCE</span>
+    <div class="logos__row">
+      <a class="logos__chip" href="realisations/alkarama.html">ALKARAMA TOURISME</a>
+      <a class="logos__chip" href="realisations/telesupport.html">TELESUPPORT</a>
+      <a class="logos__chip" href="realisations/villanova.html">VILLANOVA</a>
+    </div>
   </div>
 </section>
 
@@ -249,7 +303,11 @@
 <section class="trust">
   <div class="container trust__inner">
     <span class="trust__dot" aria-hidden="true"></span>
-    <span><strong>Nos systèmes tournent aujourd'hui</strong> pour une agence de location de voitures et une agence immobilière en Tunisie. Réponse en moins d'une heure sur WhatsApp.</span>
+    <span><strong>Des systèmes IA en production</strong> chez des entreprises tunisiennes.</span>
+    <span class="trust__dot" aria-hidden="true"></span>
+    <span><strong>Réponse en moins d'une heure</strong> sur WhatsApp.</span>
+    <span class="trust__dot" aria-hidden="true"></span>
+    <span><strong>Livraison en 5 jours à 2 semaines.</strong></span>
   </div>
 </section>
 
@@ -257,7 +315,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// CE QU'ON DÉPLOIE</span>
-      <h2>Trois systèmes.<br /><span class="accent">Un seul objectif : arrêter de perdre des clients.</span></h2>
+      <h2>Quatre systèmes.<br /><span class="accent">Un seul objectif : arrêter de perdre des clients.</span></h2>
     </div>
     <div class="grid-jobs">
 
@@ -323,6 +381,26 @@
         <a class="link-arrow" href="services/google-maps.html">→ Voir le service</a>
       </article>
 
+      <article class="jcard jcard--wide reveal" style="transition-delay:180ms">
+        <div class="jcard__mock">
+          <div class="mock-browser__bar">
+            <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
+            <span class="mock-browser__url">gestion.votreentreprise.tn</span>
+          </div>
+          <div class="mock-browser__body">
+            <div class="mock-browser__line" style="width:70%"></div>
+            <div class="mock-browser__line" style="width:45%"></div>
+            <div class="mock-browser__line mock-browser__line--accent" style="width:85%"></div>
+            <span class="mock-browser__btn">Nouvelle réservation</span>
+          </div>
+        </div>
+        <div class="jcard__text">
+          <h3>Back-office et gestion</h3>
+          <p class="jcard__body">Un espace de gestion sur mesure : réservations, facturation, suivi multi-agences. Une interface simple qu'un employé normal peut utiliser sans formation technique.</p>
+          <a class="link-arrow" href="services/back-office.html">→ Voir le service</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -364,6 +442,7 @@
         <span class="chip">Retail</span>
         <span class="chip">Outsourcing</span>
         <span class="chip">Éducation</span>
+        <span class="chip">Assurance</span>
       </div>
     </div>
   </div>
@@ -412,13 +491,14 @@
       <span class="eyebrow">// RÉALISATIONS</span>
       <h2>Ce qu'on a livré,<br /><span class="accent">pas ce qu'on promet.</span></h2>
     </div>
-    <div class="grid-4 grid-real">
+    <div class="grid-3 grid-real">
       <article class="rcard reveal">
         <div class="rcard__thumb">Alkarama Tourisme</div>
         <div class="rcard__body">
           <span class="rcard__tag">Site web + fiche Google Maps</span>
-          <h3>Alkarama Tourisme, Tunis</h3>
-          <p class="rcard__desc">Site web livré et en ligne. Optimisation de la fiche Google Maps en cours (2026). Client actif.</p>
+          <h3>Alkarama Tourisme, plus de 12 agences en Tunisie</h3>
+          <p class="rcard__desc">Site web livré et en ligne. Optimisation de la fiche Google Maps en cours, espace de gestion multi-agences en construction.</p>
+          <a class="link-arrow rcard__link" href="realisations/alkarama.html">→ Voir l'étude de cas</a>
         </div>
       </article>
       <article class="rcard reveal" style="transition-delay:60ms">
@@ -427,23 +507,16 @@
           <span class="rcard__tag">Agent SDR IA en production</span>
           <h3>Telesupport, outsourcing B2B, Tunis</h3>
           <p class="rcard__desc">Environ 4 heures récupérées par jour pour l'opératrice, plus de 100 prospections personnalisées par jour contre 20 à 25 à la main, tourne 24h sur 24. Un deuxième projet est en cours avec eux.</p>
+          <a class="link-arrow rcard__link" href="realisations/telesupport.html">→ Voir l'étude de cas</a>
         </div>
       </article>
       <article class="rcard reveal" style="transition-delay:120ms">
-        <div class="rcard__thumb">bosscartn.com</div>
-        <div class="rcard__body">
-          <span class="rcard__tag">Site web + Google Maps</span>
-          <h3>Boss Car, location de voitures</h3>
-          <p class="rcard__desc">Site en ligne et fiche Google Maps optimisée pour une agence de location de voitures tunisienne. Le site est actif et sert des clients aujourd'hui.</p>
-          <a class="link-arrow" href="https://bosscartn.com" target="_blank" rel="noopener noreferrer">→ Voir le site</a>
-        </div>
-      </article>
-      <article class="rcard reveal" style="transition-delay:180ms">
-        <div class="rcard__thumb">Agence immobilière</div>
+        <div class="rcard__thumb">Villanova</div>
         <div class="rcard__body">
           <span class="rcard__tag">Site web + infrastructure IA</span>
-          <h3>Agence immobilière tunisienne</h3>
+          <h3>Villanova, agence immobilière</h3>
           <p class="rcard__desc">Site web et infrastructure IA construits pour une agence immobilière tunisienne. Déployé et en service.</p>
+          <a class="link-arrow rcard__link" href="realisations/villanova.html">→ Voir l'étude de cas</a>
         </div>
       </article>
     </div>
@@ -583,6 +656,55 @@
   </div>
 </section>
 
+<section class="section section--dark" id="confiance">
+  <div class="section-decor" aria-hidden="true"><span class="section-decor__blob" style="top:-120px;left:-100px"></span><span class="section-decor__blob" style="bottom:-160px;right:-140px"></span></div>
+  <div class="container" style="position:relative">
+    <div class="section-head reveal">
+      <span class="eyebrow">// SÉCURITÉ ET CONFIANCE</span>
+      <h2>On travaille avec des assureurs et des entreprises.<br /><span class="accent">Voici comment vos données sont traitées.</span></h2>
+      <p class="lede">Pas de badge à brandir, pas de certification à vendre. Juste ce qu'on fait concrètement, expliqué simplement.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <h3>Localisation des données</h3>
+        <p>Vos données restent en Tunisie ou en Europe selon le déploiement choisi. Aucune donnée n'est partagée avec des tiers.</p>
+      </div>
+      <div class="trust-card reveal" style="transition-delay:60ms">
+        <h3>Standards de travail</h3>
+        <p>Nos pratiques s'alignent sur les standards européens de protection des données (le RGPD comme référentiel de travail, pas comme certification revendiquée).</p>
+      </div>
+      <div class="trust-card reveal" style="transition-delay:120ms">
+        <h3>Accès restreints</h3>
+        <p>Seules les personnes qui en ont besoin pour livrer le projet ont accès à vos systèmes et à vos données.</p>
+      </div>
+      <div class="trust-card reveal" style="transition-delay:180ms">
+        <h3>Propriété et documentation</h3>
+        <p>Vous gardez la propriété totale du système livré. Une documentation complète vous est remise à chaque étape.</p>
+      </div>
+    </div>
+    <div class="trust-diagram reveal">
+      <div class="trust-diagram__node">
+        <div class="trust-diagram__box">Client</div>
+        <span class="trust-diagram__label">Vos données</span>
+      </div>
+      <span class="trust-diagram__arrow" aria-hidden="true"></span>
+      <div class="trust-diagram__node">
+        <div class="trust-diagram__box trust-diagram__box--accent">Système Krateon</div>
+        <span class="trust-diagram__label">Tunisie ou Europe</span>
+      </div>
+      <span class="trust-diagram__arrow" aria-hidden="true"></span>
+      <div class="trust-diagram__node">
+        <div class="trust-diagram__channels">
+          <span class="trust-diagram__chan">WhatsApp</span>
+          <span class="trust-diagram__chan">Email</span>
+          <span class="trust-diagram__chan">Site web</span>
+        </div>
+        <span class="trust-diagram__label">Canaux client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--alt" id="faq">
   <div class="container">
     <div class="section-head reveal">
@@ -590,6 +712,13 @@
       <h2>Tout ce que vous devez savoir<br /><span class="accent">avant de déployer.</span></h2>
     </div>
     <div class="faq reveal">
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false">
+          <span>C'est quoi Krateon.tn exactement ?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Krateon est une agence IA basée au Grand Tunis qui construit des sites web, des agents WhatsApp et des automatisations pour les entreprises tunisiennes. On livre des systèmes qui tournent, pas des concepts.</p></div></div>
+      </div>
       <div class="faq__item">
         <button class="faq__q" aria-expanded="false">
           <span>Je peux pas juste utiliser ChatGPT directement ?</span>
@@ -703,6 +832,7 @@
           <a href="services/agent-whatsapp.html">Agent WhatsApp</a>
           <a href="services/google-maps.html">Google Maps</a>
           <a href="services/automatisation.html">Automatisation</a>
+          <a href="services/back-office.html">Back-office et gestion</a>
         </div>
       </div>
       <div>
@@ -711,6 +841,12 @@
           <a href="solutions/services-locaux.html">Commerces et services locaux</a>
           <a href="solutions/agences.html">Agences</a>
           <a href="solutions/entreprises.html">Entreprises</a>
+        </div>
+        <div class="footer__col-title" style="margin-top:24px">Réalisations</div>
+        <div class="footer__links">
+          <a href="realisations/alkarama.html">Alkarama</a>
+          <a href="realisations/telesupport.html">Telesupport</a>
+          <a href="realisations/villanova.html">Villanova</a>
         </div>
       </div>
     </div>

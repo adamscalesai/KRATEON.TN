@@ -26,6 +26,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://krateon.tn/services/back-office</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krateon.tn/realisations/alkarama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://krateon.tn/realisations/telesupport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://krateon.tn/realisations/villanova</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://krateon.tn/solutions/services-locaux</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
