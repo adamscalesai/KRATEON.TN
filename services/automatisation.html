@@ -36,7 +36,9 @@
   "mainEntity": [
     { "@type": "Question", "name": "Quelles tâches peuvent être automatisées ?", "acceptedAnswer": { "@type": "Answer", "text": "Les tâches répétitives et bien définies : relances de paiement, confirmations de rendez vous, tri de demandes entrantes, prospection de nouveaux clients, rapports réguliers. Pas les décisions qui demandent votre jugement." } },
     { "@type": "Question", "name": "Est ce que ça remplace mon équipe ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Ça retire les tâches répétitives pour que votre équipe se concentre sur ce qui rapporte : la vente, la négociation, la relation client. L'automatisation fait le travail de fond en arrière plan." } },
-    { "@type": "Question", "name": "Comment savoir si mon activité s'y prête ?", "acceptedAnswer": { "@type": "Answer", "text": "Si une tâche revient chaque jour ou chaque semaine avec les mêmes étapes, elle s'y prête probablement. On en discute pendant l'appel découverte, gratuit et sans engagement." } }
+    { "@type": "Question", "name": "Comment savoir si mon activité s'y prête ?", "acceptedAnswer": { "@type": "Answer", "text": "Si une tâche revient chaque jour ou chaque semaine avec les mêmes étapes, elle s'y prête probablement. On en discute pendant l'appel découverte, gratuit et sans engagement." } },
+    { "@type": "Question", "name": "Qu'est ce qui se passe si le système fait une erreur ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque action est journalisée, on peut identifier et corriger rapidement. C'est pour ça que les cas ambigus sont escaladés vers un humain plutôt que traités à l'aveugle." } },
+    { "@type": "Question", "name": "Faut il des connaissances techniques pour l'utiliser ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Le système tourne en arrière plan, vous recevez des notifications et des rapports lisibles, sans jamais toucher à une ligne de configuration." } }
   ]
 }
 </script>
@@ -64,11 +66,11 @@
       <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="../services/site-web.html">Sites web</a>
-          <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
-          <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
-          <a aria-current="page" role="menuitem" href="../services/automatisation.html">Automatisation</a>
-          <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
+          <a role="menuitem" href="../services/site-web.html">Le site qui vend</a>
+          <a role="menuitem" href="../services/google-maps.html">Premier sur Google Maps</a>
+          <a role="menuitem" href="../services/agent-whatsapp.html">Le vendeur qui ne dort jamais</a>
+          <a aria-current="page" role="menuitem" href="../services/automatisation.html">Fini les tâches répétitives</a>
+          <a role="menuitem" href="../services/back-office.html">Le cerveau qui coordonne tout</a>
         </div>
       </div>
       <div class="nav__drop">
@@ -106,12 +108,31 @@
 <section class="svc-hero">
   <div class="container svc-hero__inner reveal">
     <div class="breadcrumb"><a href="../index.html">Accueil</a><span>/</span><a href="../index.html#services">Services</a><span>/</span><span>Automatisation</span></div>
-    <span class="eyebrow">// AUTOMATISATION D'ENTREPRISE EN TUNISIE</span>
+    <span class="eyebrow">// FINI LES TÂCHES RÉPÉTITIVES</span>
     <h1>Les tâches qui reviennent chaque jour<br /><span class="accent">n'ont pas besoin d'un humain.</span></h1>
     <p class="lede">Relances de paiement, confirmations de rendez vous, tri de demandes, prospection de nouveaux clients. On construit le système qui fait ce travail en arrière plan, sans erreur et sans pause, pendant que votre équipe se concentre sur la vente.</p>
     <div class="hero__ctas">
       <a class="btn btn--primary btn--lg" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn btn--lg btn--ghost" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+    </div>
+    <span class="stat-chip"><strong>4h/jour</strong> récupérées, mesuré chez un client</span>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container logos__inner">
+    <span class="logos__label">// ILS NOUS FONT CONFIANCE</span>
+    <div class="logos__row">
+      <a class="logos__chip logos__chip--logo" href="../realisations/alkarama.html">
+        <img src="../assets/alkarama-logo.png" alt="Alkarama Tourisme" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo" href="../realisations/telesupport.html">
+        <img src="../assets/telesupport-logo.png" alt="Telesupport" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo logos__chip--dark" href="../realisations/villanova.html">
+        <img src="../assets/villanova-logo.svg" alt="Villanova" loading="lazy" />
+      </a>
+      <a class="logos__chip" href="../realisations/cloudian.html">CLOUDIAN</a>
     </div>
   </div>
 </section>
@@ -165,10 +186,104 @@
         </div>
       </div>
     </div>
+
+    <div class="svc-escalation reveal">
+      <div>
+        <span class="eyebrow">// QUAND LE SYSTÈME PASSE LA MAIN</span>
+        <h2 style="margin-bottom:14px">Il automatise l'exécution, pas votre jugement.</h2>
+        <p class="lede" style="margin-bottom:0">Sur une négociation, une exception ou un cas qui sort du cadre défini, le système s'arrête et vous notifie plutôt que de continuer à l'aveugle.</p>
+      </div>
+      <div class="svc-escalation__visual">
+        <div class="esc-step">
+          <span class="esc-step__num">01</span>
+          <p>Le système détecte un cas qui demande une décision humaine plutôt qu'une exécution automatique.</p>
+        </div>
+        <div class="esc-step">
+          <span class="esc-step__num">02</span>
+          <p>Il vous notifie avec le contexte complet, vous validez ou ajustez.</p>
+        </div>
+        <div class="esc-step esc-step--handoff">
+          <span class="esc-step__num">03</span>
+          <p>Le système reprend automatiquement la suite du process, sans que rien ne se perde.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// AVANT / APRÈS</span>
+      <h2>Le même travail,<br /><span class="accent">fait par quelqu'un ou par personne.</span></h2>
+    </div>
+    <div class="compare reveal">
+      <div class="compare__side compare__side--before">
+        <span class="compare__label">Sans automatisation</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Relances oubliées quand la semaine devient chargée</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Tri manuel des emails et messages, boîte commune qui déborde</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Prospection ponctuelle, seulement quand quelqu'un a le temps</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Rapport compilé à la main, souvent en retard</li>
+        </ul>
+      </div>
+      <div class="compare__divider" aria-hidden="true"><span>VS</span></div>
+      <div class="compare__side compare__side--after">
+        <span class="compare__label">Avec le système</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Relances déclenchées au bon moment, sans que personne y pense</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Tri automatique vers la bonne personne, dès l'arrivée</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Prospection qui tourne 24h sur 24, sans dépendre d'un créneau libre</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Rapport généré et envoyé automatiquement, chaque jour ou semaine</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cap-row reveal">
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>
+        <h4>Sans erreur humaine</h4>
+        <p>Les mêmes étapes exécutées exactement de la même façon, à chaque fois, sans fatigue ni oubli.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></span>
+        <h4>Journal complet</h4>
+        <p>Chaque action est enregistrée et consultable, vous savez toujours ce qui a été fait et quand.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M6 18L18 6"/></svg></span>
+        <h4>S'arrête proprement</h4>
+        <p>Dès qu'une réponse arrive ou qu'un cas sort du cadre, le système s'arrête au lieu d'insister.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></span>
+        <h4>Ajustable sans recoder</h4>
+        <p>Le process évolue avec votre activité, sans repartir de zéro à chaque changement.</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:clamp(48px,6vw,72px)">
+      <span class="eyebrow">// LE MÊME MOTEUR, EN PRODUCTION</span>
+      <h2>Deux entreprises,<br /><span class="accent">le même moteur derrière.</span></h2>
+    </div>
+    <div class="case-cluster reveal">
+      <a class="case-mini" href="../realisations/telesupport.html">
+        <span class="case-mini__logo">Telesupport</span>
+        <span class="case-mini__stat">100+ messages/jour</span>
+        <span class="case-mini__desc">Contre 20 à 25 à la main. Système qui tourne 24h sur 24, plus de 50% moins cher qu'une embauche.</span>
+        <span class="case-mini__link">Voir l'étude de cas →</span>
+      </a>
+      <a class="case-mini" href="../realisations/cloudian.html">
+        <span class="case-mini__logo">Cloudian</span>
+        <span class="case-mini__stat">90% du motion SDR</span>
+        <span class="case-mini__desc">Automatisé à l'échelle enterprise, pour 3 heures d'intervention humaine par semaine.</span>
+        <span class="case-mini__link">Voir l'étude de cas →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// FAQ</span>
@@ -187,6 +302,41 @@
         <button class="faq__q" aria-expanded="false"><span>Comment savoir si mon activité s'y prête ?</span><span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div class="faq__a-inner"><p>Si une tâche revient chaque jour ou chaque semaine avec les mêmes étapes, elle s'y prête probablement. On en discute pendant l'appel découverte, gratuit et sans engagement.</p></div></div>
       </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>Qu'est ce qui se passe si le système fait une erreur ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Chaque action est journalisée, on peut identifier et corriger rapidement. C'est pour ça que les cas ambigus sont escaladés vers un humain plutôt que traités à l'aveugle.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>Faut il des connaissances techniques pour l'utiliser ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Non. Le système tourne en arrière plan, vous recevez des notifications et des rapports lisibles, sans jamais toucher à une ligne de configuration.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// À COMPLÉTER AVEC</span>
+      <h2>Les services qui vont avec.</h2>
+    </div>
+    <div class="cross-grid reveal">
+      <a class="cross-card" href="site-web.html">
+        <h4>Le site qui vend <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Le point d'entrée qui alimente le système avec de nouvelles demandes.</p>
+      </a>
+      <a class="cross-card" href="agent-whatsapp.html">
+        <h4>Le vendeur qui ne dort jamais <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Même moteur, pointé sur la conversation WhatsApp plutôt que sur les tâches de fond.</p>
+      </a>
+      <a class="cross-card" href="google-maps.html">
+        <h4>Premier sur Google Maps <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Plus de visibilité locale, donc plus de demandes à faire traiter par le système.</p>
+      </a>
+      <a class="cross-card" href="back-office.html">
+        <h4>Le cerveau qui coordonne tout <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Le système alimente directement votre espace de gestion, sans ressaisie.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -200,6 +350,7 @@
       <a class="btn btn--lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel <span class="arrow" aria-hidden="true">→</span></a>
     </div>
     <p class="final__note">Appel de 30 min, ou écrivez nous à adam@krateon.tn</p>
+    <p class="final__risk">Pas d'engagement long terme. Devis clair sur votre cas, sans surprise.</p>
   </div>
 </section>
 

@@ -37,7 +37,9 @@
     { "@type": "Question", "name": "L'agent WhatsApp risque de bannir mon compte ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, on utilise l'API officielle WhatsApp Business, pas un script qui automatise votre téléphone personnel. C'est l'infrastructure que Meta fournit pour ce cas exact." } },
     { "@type": "Question", "name": "L'agent peut il répondre à n'importe quelle question ?", "acceptedAnswer": { "@type": "Answer", "text": "Il répond sur ce qu'on lui configure : vos services, vos horaires, vos tarifs de base, la prise de rendez vous. Pour une question hors sujet, il transmet la conversation à un humain au lieu d'inventer une réponse." } },
     { "@type": "Question", "name": "Combien de temps pour le déployer ?", "acceptedAnswer": { "@type": "Answer", "text": "Environ 2 semaines, le temps de configurer les réponses sur votre activité réelle et de tester avec de vraies conversations avant de le brancher sur votre numéro." } },
-    { "@type": "Question", "name": "Est ce que je garde le contrôle des conversations ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Vous voyez toutes les conversations dans un tableau de bord, vous pouvez reprendre la main à tout moment, et l'agent vous notifie dès qu'une demande sort de son cadre." } }
+    { "@type": "Question", "name": "Est ce que je garde le contrôle des conversations ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Vous voyez toutes les conversations dans un tableau de bord, vous pouvez reprendre la main à tout moment, et l'agent vous notifie dès qu'une demande sort de son cadre." } },
+    { "@type": "Question", "name": "L'agent gère t il l'arabe et le dialecte tunisien ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, il répond en français, en arabe et en anglais, y compris le dialecte tunisien tel qu'il est écrit sur WhatsApp." } },
+    { "@type": "Question", "name": "Combien coûte un agent WhatsApp ?", "acceptedAnswer": { "@type": "Answer", "text": "Ça dépend du volume de conversations et des intégrations nécessaires. Écrivez nous sur WhatsApp avec une idée de votre activité, on vous chiffre ça clairement." } }
   ]
 }
 </script>
@@ -65,11 +67,11 @@
       <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="../services/site-web.html">Sites web</a>
-          <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
-          <a aria-current="page" role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
-          <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
-          <a role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
+          <a role="menuitem" href="../services/site-web.html">Le site qui vend</a>
+          <a role="menuitem" href="../services/google-maps.html">Premier sur Google Maps</a>
+          <a aria-current="page" role="menuitem" href="../services/agent-whatsapp.html">Le vendeur qui ne dort jamais</a>
+          <a role="menuitem" href="../services/automatisation.html">Fini les tâches répétitives</a>
+          <a role="menuitem" href="../services/back-office.html">Le cerveau qui coordonne tout</a>
         </div>
       </div>
       <div class="nav__drop">
@@ -107,12 +109,31 @@
 <section class="svc-hero">
   <div class="container svc-hero__inner reveal">
     <div class="breadcrumb"><a href="../index.html">Accueil</a><span>/</span><a href="../index.html#services">Services</a><span>/</span><span>Agent WhatsApp</span></div>
-    <span class="eyebrow">// AGENT IA WHATSAPP EN TUNISIE</span>
+    <span class="eyebrow">// LE VENDEUR QUI NE DORT JAMAIS</span>
     <h1>Le client écrit à 23h.<br /><span class="accent">Quelqu'un répond quand même.</span></h1>
     <p class="lede">Un agent qui répond sur votre WhatsApp professionnel à toute heure, capture le nom, le besoin et la ville du client, et prend le rendez vous ou transmet la demande à votre équipe le lendemain matin.</p>
     <div class="hero__ctas">
       <a class="btn btn--primary btn--lg" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn btn--lg btn--ghost" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+    </div>
+    <span class="stat-chip"><strong>0s</strong> de temps de réponse, jour et nuit</span>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container logos__inner">
+    <span class="logos__label">// ILS NOUS FONT CONFIANCE</span>
+    <div class="logos__row">
+      <a class="logos__chip logos__chip--logo" href="../realisations/alkarama.html">
+        <img src="../assets/alkarama-logo.png" alt="Alkarama Tourisme" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo" href="../realisations/telesupport.html">
+        <img src="../assets/telesupport-logo.png" alt="Telesupport" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo logos__chip--dark" href="../realisations/villanova.html">
+        <img src="../assets/villanova-logo.svg" alt="Villanova" loading="lazy" />
+      </a>
+      <a class="logos__chip" href="../realisations/cloudian.html">CLOUDIAN</a>
     </div>
   </div>
 </section>
@@ -169,10 +190,104 @@
         </div>
       </div>
     </div>
+
+    <div class="svc-escalation reveal">
+      <div>
+        <span class="eyebrow">// QUAND TRANSFÉRER À UN HUMAIN</span>
+        <h2 style="margin-bottom:14px">L'agent sait ce qu'il ne sait pas.</h2>
+        <p class="lede" style="margin-bottom:0">Il ne devine jamais une réponse. Sur une négociation, une réclamation ou une question hors de son cadre, il bascule vers votre équipe avec tout le contexte déjà réuni, pas un client à faire répéter depuis le début.</p>
+      </div>
+      <div class="svc-escalation__visual">
+        <div class="esc-step">
+          <span class="esc-step__num">01</span>
+          <p>L'agent détecte une demande hors de son cadre configuré (prix négocié, réclamation, cas particulier).</p>
+        </div>
+        <div class="esc-step">
+          <span class="esc-step__num">02</span>
+          <p>Toute la conversation, avec le contexte capturé, est transmise à votre équipe.</p>
+        </div>
+        <div class="esc-step esc-step--handoff">
+          <span class="esc-step__num">03</span>
+          <p>Vous reprenez la main directement dans WhatsApp. Le client ne repart jamais de zéro.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// AVANT / APRÈS</span>
+      <h2>La même demande,<br /><span class="accent">deux issues différentes.</span></h2>
+    </div>
+    <div class="compare reveal">
+      <div class="compare__side compare__side--before">
+        <span class="compare__label">Sans agent</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Le client écrit à 23h, personne ne répond avant l'ouverture</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Il a déjà écrit au concurrent suivant le lendemain matin</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Les demandes urgentes se perdent dans une messagerie perso</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Aucune trace claire de qui a répondu quoi, ni quand</li>
+        </ul>
+      </div>
+      <div class="compare__divider" aria-hidden="true"><span>VS</span></div>
+      <div class="compare__side compare__side--after">
+        <span class="compare__label">Avec l'agent WhatsApp</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Réponse en quelques secondes, jour et nuit</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Nom, besoin et ville capturés automatiquement</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Rendez vous bloqué sans aller retour de messages</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Chaque conversation visible dans un tableau de bord partagé</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cap-row reveal">
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6 6-6"/></svg></span>
+        <h4>Français, arabe, anglais</h4>
+        <p>L'agent répond dans la langue utilisée par le client, y compris le dialecte tunisien courant à l'écrit.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></span>
+        <h4>Plusieurs conversations en parallèle</h4>
+        <p>Dix clients qui écrivent en même temps sont traités en même temps, sans file d'attente.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a6 6 0 0 1 6 6c0 3 1.4 4.4 1.4 4.4H4.6S6 11 6 8a6 6 0 0 1 6-6z"/></svg></span>
+        <h4>Notification en temps réel</h4>
+        <p>Votre équipe reçoit une alerte dès qu'une demande sort du cadre de l'agent, sans surveiller le téléphone.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+        <h4>Historique exportable</h4>
+        <p>Toutes les conversations et les demandes capturées restent consultables et exportables à tout moment.</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:clamp(48px,6vw,72px)">
+      <span class="eyebrow">// LE MÊME MOTEUR, EN PRODUCTION</span>
+      <h2>Ce n'est pas un concept.<br /><span class="accent">C'est le moteur qui tourne déjà.</span></h2>
+    </div>
+    <div class="case-cluster reveal">
+      <a class="case-mini" href="../realisations/telesupport.html">
+        <span class="case-mini__logo">Telesupport</span>
+        <span class="case-mini__stat">4h/jour récupérées</span>
+        <span class="case-mini__desc">Même moteur de qualification et de relance conversationnelle, appliqué à la prospection B2B. Tourne 24h sur 24.</span>
+        <span class="case-mini__link">Voir l'étude de cas →</span>
+      </a>
+      <a class="case-mini" href="../realisations/cloudian.html">
+        <span class="case-mini__logo">Cloudian</span>
+        <span class="case-mini__stat">3h/semaine d'intervention</span>
+        <span class="case-mini__desc">Le motion de qualification tourne à 90% en automatique, avec un humain qui reprend la main sur les cas qui comptent.</span>
+        <span class="case-mini__link">Voir l'étude de cas →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// FAQ</span>
@@ -195,6 +310,41 @@
         <button class="faq__q" aria-expanded="false"><span>Est ce que je garde le contrôle des conversations ?</span><span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div class="faq__a-inner"><p>Oui. Vous voyez toutes les conversations dans un tableau de bord, vous pouvez reprendre la main à tout moment, et l'agent vous notifie dès qu'une demande sort de son cadre.</p></div></div>
       </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>L'agent gère t il l'arabe et le dialecte tunisien ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Oui, il répond en français, en arabe et en anglais, y compris le dialecte tunisien tel qu'il est écrit sur WhatsApp.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>Combien coûte un agent WhatsApp ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Ça dépend du volume de conversations et des intégrations nécessaires. Écrivez nous sur WhatsApp avec une idée de votre activité, on vous chiffre ça clairement.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// À COMPLÉTER AVEC</span>
+      <h2>Les services qui vont avec.</h2>
+    </div>
+    <div class="cross-grid reveal">
+      <a class="cross-card" href="site-web.html">
+        <h4>Le site qui vend <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Le point d'entrée qui pousse le visiteur vers la conversation WhatsApp au lieu de le laisser repartir.</p>
+      </a>
+      <a class="cross-card" href="google-maps.html">
+        <h4>Premier sur Google Maps <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Plus de recherches locales captées, donc plus de clients qui atterrissent sur l'agent.</p>
+      </a>
+      <a class="cross-card" href="automatisation.html">
+        <h4>Fini les tâches répétitives <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Le même moteur, pointé sur les relances, les confirmations et la prospection.</p>
+      </a>
+      <a class="cross-card" href="back-office.html">
+        <h4>Le cerveau qui coordonne tout <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Les demandes capturées par l'agent atterrissent directement dans votre espace de gestion.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -208,6 +358,7 @@
       <a class="btn btn--lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel <span class="arrow" aria-hidden="true">→</span></a>
     </div>
     <p class="final__note">Appel de 30 min, ou écrivez nous à adam@krateon.tn</p>
+    <p class="final__risk">Pas d'engagement long terme. Pilote chiffré sur demande, sans surprise.</p>
   </div>
 </section>
 

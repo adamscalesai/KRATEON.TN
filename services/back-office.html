@@ -37,7 +37,9 @@
     { "@type": "Question", "name": "C'est quoi un back-office sur mesure exactement ?", "acceptedAnswer": { "@type": "Answer", "text": "Un espace de gestion construit pour votre activité réelle : suivi des réservations, facturation, tableau de bord multi-agences. Pas un logiciel générique où vous adaptez votre travail à l'outil, l'inverse." } },
     { "@type": "Question", "name": "Mon équipe n'est pas technique, ça va poser problème ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, c'est le point de départ. L'interface est construite pour qu'un employé normal l'utilise sans formation lourde : quelques écrans clairs, les actions du quotidien en deux clics." } },
     { "@type": "Question", "name": "Ça marche pour un réseau de plusieurs agences ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, c'est le cas d'usage principal. Chaque agence garde sa vue locale, le siège garde une vue consolidée sur l'ensemble du réseau." } },
-    { "@type": "Question", "name": "Combien de temps pour le mettre en place ?", "acceptedAnswer": { "@type": "Answer", "text": "Ça dépend du nombre de modules (réservations, facturation, suivi) et du nombre d'agences à connecter. On chiffre le délai précis après un audit rapide de votre process actuel." } }
+    { "@type": "Question", "name": "Combien de temps pour le mettre en place ?", "acceptedAnswer": { "@type": "Answer", "text": "Ça dépend du nombre de modules (réservations, facturation, suivi) et du nombre d'agences à connecter. On chiffre le délai précis après un audit rapide de votre process actuel." } },
+    { "@type": "Question", "name": "Peut on donner des accès différents selon les rôles ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, chaque employé voit et modifie uniquement ce qui correspond à son rôle et à son agence, le siège garde la vue complète." } },
+    { "@type": "Question", "name": "Ça s'intègre avec nos outils comptables existants ?", "acceptedAnswer": { "@type": "Answer", "text": "Les données de facturation s'exportent dans un format exploitable par votre comptable. Une intégration directe se discute selon l'outil utilisé." } }
   ]
 }
 </script>
@@ -65,11 +67,11 @@
       <div class="nav__drop" data-active="true">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Services</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="../services/site-web.html">Sites web</a>
-          <a role="menuitem" href="../services/google-maps.html">Optimisation Google Maps</a>
-          <a role="menuitem" href="../services/agent-whatsapp.html">Agents WhatsApp IA</a>
-          <a role="menuitem" href="../services/automatisation.html">Automatisation</a>
-          <a aria-current="page" role="menuitem" href="../services/back-office.html">Back-office et gestion</a>
+          <a role="menuitem" href="../services/site-web.html">Le site qui vend</a>
+          <a role="menuitem" href="../services/google-maps.html">Premier sur Google Maps</a>
+          <a role="menuitem" href="../services/agent-whatsapp.html">Le vendeur qui ne dort jamais</a>
+          <a role="menuitem" href="../services/automatisation.html">Fini les tâches répétitives</a>
+          <a aria-current="page" role="menuitem" href="../services/back-office.html">Le cerveau qui coordonne tout</a>
         </div>
       </div>
       <div class="nav__drop">
@@ -107,12 +109,31 @@
 <section class="svc-hero">
   <div class="container svc-hero__inner reveal">
     <div class="breadcrumb"><a href="../index.html">Accueil</a><span>/</span><a href="../index.html#services">Services</a><span>/</span><span>Back-office et gestion</span></div>
-    <span class="eyebrow">// BACK-OFFICE ET GESTION SUR MESURE EN TUNISIE</span>
+    <span class="eyebrow">// LE CERVEAU QUI COORDONNE TOUT</span>
     <h1>Un espace de gestion pensé pour<br /><span class="accent">votre process, pas l'inverse.</span></h1>
     <p class="lede">Les agences de voyage et les réseaux multi-agences gèrent souvent leurs réservations dans un mélange de fichiers Excel, de groupes WhatsApp et de mémoire individuelle. On construit l'espace de gestion qui remplace ce bricolage : réservations, facturation, suivi multi-agences, dans une interface qu'un employé normal utilise sans formation technique.</p>
     <div class="hero__ctas">
       <a class="btn btn--primary btn--lg" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn btn--lg btn--ghost" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+    </div>
+    <span class="stat-chip"><strong>12+</strong> agences déjà coordonnées dans une seule vue</span>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container logos__inner">
+    <span class="logos__label">// ILS NOUS FONT CONFIANCE</span>
+    <div class="logos__row">
+      <a class="logos__chip logos__chip--logo" href="../realisations/alkarama.html">
+        <img src="../assets/alkarama-logo.png" alt="Alkarama Tourisme" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo" href="../realisations/telesupport.html">
+        <img src="../assets/telesupport-logo.png" alt="Telesupport" loading="lazy" />
+      </a>
+      <a class="logos__chip logos__chip--logo logos__chip--dark" href="../realisations/villanova.html">
+        <img src="../assets/villanova-logo.svg" alt="Villanova" loading="lazy" />
+      </a>
+      <a class="logos__chip" href="../realisations/cloudian.html">CLOUDIAN</a>
     </div>
   </div>
 </section>
@@ -184,10 +205,98 @@
         </div>
       </div>
     </div>
+
+    <div class="svc-escalation reveal">
+      <div>
+        <span class="eyebrow">// QUAND UNE EXCEPTION ARRIVE</span>
+        <h2 style="margin-bottom:14px">Chaque cas particulier reste modifiable à la main.</h2>
+        <p class="lede" style="margin-bottom:0">Un remboursement, un litige, une réservation hors process : ces cas restent visibles et modifiables directement dans l'outil, sans contourner le système ni revenir au fichier Excel parallèle.</p>
+      </div>
+      <div class="svc-escalation__visual">
+        <div class="esc-step">
+          <span class="esc-step__num">01</span>
+          <p>Un employé signale un cas particulier directement dans le dossier concerné.</p>
+        </div>
+        <div class="esc-step">
+          <span class="esc-step__num">02</span>
+          <p>Le dossier reste modifiable à la main, avec l'historique complet des changements.</p>
+        </div>
+        <div class="esc-step esc-step--handoff">
+          <span class="esc-step__num">03</span>
+          <p>Le siège garde une vue consolidée, même sur les cas traités manuellement.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// AVANT / APRÈS</span>
+      <h2>Le même réseau,<br /><span class="accent">avec ou sans vue d'ensemble.</span></h2>
+    </div>
+    <div class="compare reveal">
+      <div class="compare__side compare__side--before">
+        <span class="compare__label">Excel et WhatsApp</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Chaque agence a sa propre version de la vérité</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Réservations éparpillées entre fichiers, messages et mémoire</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Facturation ressaisie manuellement d'un outil à l'autre</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--x">✕</span>Le siège découvre les problèmes en retard</li>
+        </ul>
+      </div>
+      <div class="compare__divider" aria-hidden="true"><span>VS</span></div>
+      <div class="compare__side compare__side--after">
+        <span class="compare__label">Espace de gestion Krateon</span>
+        <ul class="compare__list">
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Une seule source de vérité, partagée en temps réel</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Réservations centralisées quel que soit le canal d'entrée</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Facturation générée directement depuis la réservation</li>
+          <li class="compare__item"><span class="compare__icon compare__icon--check">✓</span>Vue consolidée pour le siège, vue locale pour chaque agence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cap-row reveal">
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h4>Accès par rôle</h4>
+        <p>Chaque employé voit et modifie uniquement ce qui correspond à son rôle, sans exposer toute la donnée du réseau.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM4 9h16"/></svg></span>
+        <h4>Export comptable</h4>
+        <p>Les données de facturation s'exportent dans un format exploitable par votre comptable, sans ressaisie.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h4>Historique complet</h4>
+        <p>Chaque modification est datée et attribuée, utile pour retracer un désaccord ou une erreur.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8a4 4 0 0 1 4 4c0 3 1.4 4.4 1.4 4.4H6.6S8 15 8 12a4 4 0 0 1 4-4z"/></svg></span>
+        <h4>Alertes automatiques</h4>
+        <p>Une réservation sans confirmation, un paiement en retard, le siège est notifié sans avoir à chercher.</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:clamp(48px,6vw,72px)">
+      <span class="eyebrow">// LIVRÉ, PAS PROMIS</span>
+      <h2>Le premier réseau<br /><span class="accent">déjà sur ce système.</span></h2>
+    </div>
+    <div class="case-cluster reveal">
+      <a class="case-mini" href="../realisations/alkarama.html">
+        <span class="case-mini__logo">Alkarama Tourisme</span>
+        <span class="case-mini__stat">12+ agences</span>
+        <span class="case-mini__desc">Espace de gestion multi-agences en construction pour un réseau d'agences de voyage à travers la Tunisie.</span>
+        <span class="case-mini__link">Voir l'étude de cas →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// FAQ</span>
@@ -210,6 +319,41 @@
         <button class="faq__q" aria-expanded="false"><span>Combien de temps pour le mettre en place ?</span><span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div class="faq__a-inner"><p>Ça dépend du nombre de modules (réservations, facturation, suivi) et du nombre d'agences à connecter. On chiffre le délai précis après un audit rapide de votre process actuel.</p></div></div>
       </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>Peut on donner des accès différents selon les rôles ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Oui, chaque employé voit et modifie uniquement ce qui correspond à son rôle et à son agence, le siège garde la vue complète.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" aria-expanded="false"><span>Ça s'intègre avec nos outils comptables existants ?</span><span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner"><p>Les données de facturation s'exportent dans un format exploitable par votre comptable. Une intégration directe se discute selon l'outil utilisé.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// À COMPLÉTER AVEC</span>
+      <h2>Les services qui vont avec.</h2>
+    </div>
+    <div class="cross-grid reveal">
+      <a class="cross-card" href="site-web.html">
+        <h4>Le site qui vend <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Les demandes captées par le site atterrissent directement dans l'espace de gestion.</p>
+      </a>
+      <a class="cross-card" href="agent-whatsapp.html">
+        <h4>Le vendeur qui ne dort jamais <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Les réservations prises par l'agent WhatsApp remontent automatiquement dans le tableau de bord.</p>
+      </a>
+      <a class="cross-card" href="google-maps.html">
+        <h4>Premier sur Google Maps <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Plus de trafic local capté par la fiche, plus de dossiers à coordonner dans l'espace de gestion.</p>
+      </a>
+      <a class="cross-card" href="automatisation.html">
+        <h4>Fini les tâches répétitives <span class="arrow" aria-hidden="true">→</span></h4>
+        <p>Relances et rapports générés directement à partir des données du back-office.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -223,6 +367,7 @@
       <a class="btn btn--lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel <span class="arrow" aria-hidden="true">→</span></a>
     </div>
     <p class="final__note">Appel de 30 min, ou écrivez nous à adam@krateon.tn</p>
+    <p class="final__risk">Pas d'engagement long terme. Audit de votre process avant tout devis.</p>
   </div>
 </section>
 
