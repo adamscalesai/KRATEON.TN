@@ -2829,3 +2829,141 @@ input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .cap-card:hover, .case-mini:hover, .cross-card:hover { transform: none; }
 }
+
+/* ================================================================
+   v9 additions: AI-first nav, premium AI services, packs restructure,
+   SVG icon set, themed workflow canvases
+   ================================================================ */
+
+/* ---- Nav dropdown sublabels ---- */
+.nav__drop-menu a { display: flex; flex-direction: column; gap: 2px; }
+.nav__sublabel { font-size: 11.5px; color: var(--fg-muted); font-weight: 400; letter-spacing: 0; line-height: 1.3; }
+.nav__drop-menu a:hover .nav__sublabel { color: var(--accent); opacity: 0.85; }
+.nav__drop-menu a.is-ai { position: relative; }
+.nav__drop-menu a.is-ai::after {
+  content: "IA";
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  font-family: "DM Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, #7C3AED, #3B82F6);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+@media (max-width: 768px) {
+  .nav__sublabel { font-size: 11px; }
+}
+
+/* ---- Inline SVG icon set (replaces emoji icons sitewide) ---- */
+.icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon-svg svg { width: 100%; height: 100%; }
+.chip { display: inline-flex; align-items: center; gap: 7px; }
+.chip .icon-svg { width: 15px; height: 15px; color: var(--fg-muted); }
+.hero__carousel-item { display: inline-flex; align-items: center; gap: 8px; }
+.hero__carousel-item .icon-svg { width: 16px; height: 16px; color: var(--accent); }
+
+/* ---- Premium AI service treatment (jobs grid, cross-link grids) ---- */
+.jcard--ai {
+  background: linear-gradient(160deg, color-mix(in oklab, #7C3AED 7%, var(--card-bg)), color-mix(in oklab, var(--accent) 5%, var(--card-bg)));
+  border-color: color-mix(in oklab, #7C3AED 30%, var(--border));
+  position: relative;
+  overflow: hidden;
+}
+.jcard--ai::after {
+  content: "";
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(124,58,237,0.22), transparent 70%);
+  pointer-events: none;
+}
+.jcard--ai .jcard__ai-tag {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, #7C3AED, #3B82F6);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+/* ---- Packs restructure v9 ---- */
+.tier--enterprise {
+  background: #101114;
+  color: #F4F4F5;
+  border-color: rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.tier--enterprise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(124,58,237,0.28), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(59,130,246,0.22), transparent 55%);
+  pointer-events: none;
+}
+.tier--enterprise .tier__name, .tier--enterprise .tier__desc { color: #F4F4F5; position: relative; }
+.tier--enterprise .tier__desc { color: rgba(244,244,245,0.65); }
+.tier--enterprise .tier__features { position: relative; color: rgba(244,244,245,0.85); }
+.tier--enterprise .tier__features li::before { color: #A78BFA; }
+.tier--enterprise .tier__foundation {
+  position: relative;
+  font-size: 12.5px;
+  color: rgba(244,244,245,0.5);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.tier__foundation {
+  font-size: 12.5px;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.tier__outcome {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+.tier--enterprise .tier__outcome { color: #A78BFA; }
+
+/* ---- Themed workflow canvas variants (retint the shared .workflow machinery) ---- */
+.workflow--insurance .wf-node,
+.workflow--sdr .wf-node,
+.workflow--booking .wf-node,
+.workflow--support .wf-node,
+.workflow--maps .wf-node,
+.workflow--site .wf-node,
+.workflow--backoffice .wf-node { stroke: var(--border); }
+.workflow--insurance { --accent: #3B82F6; }
+.workflow--sdr { --accent: #7C3AED; }
+.workflow--booking { --accent: #F59E0B; }
+.workflow--support { --accent: #10B981; }
+.workflow--maps { --accent: #EF4444; }
+.workflow--site { --accent: #3B82F6; }
+.workflow--backoffice { --accent: #7C3AED; }
