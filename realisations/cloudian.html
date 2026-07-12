@@ -106,10 +106,10 @@
     <div class="cs-logo-badge"><span style="font-family:'DM Mono',monospace;font-weight:600;letter-spacing:0.04em;color:var(--fg)">CLOUDIAN</span></div>
     <span class="eyebrow">// ÉTUDE DE CAS</span>
     <h1>Un SDR IA qui tient<br /><span class="accent">à l'échelle enterprise, pour Cloudian.</span></h1>
-    <p class="lede">Cloudian est une entreprise de stockage de données à l'échelle enterprise. Krateon gère l'intégralité du motion SDR (sales development) sous forme de système IA : sourcing des comptes cibles (ICP), construction des listes, séquences email personnalisées, puis relance LinkedIn après connexion.</p>
+    <p class="lede">Cloudian est une entreprise de stockage de données à l'échelle enterprise (plateforme S3, data lakes hybrides et souverains). Krateon gère l'intégralité du motion SDR (sales development) de la campagne Golfe sous forme de système IA : sourcing des comptes cibles (ICP), construction des listes, séquences email personnalisées, puis relance LinkedIn après connexion.</p>
     <div class="cs-hero__meta">
       <span>Stockage de données, enterprise</span>
-      <span>Compte international</span>
+      <span>Campagne région Golfe</span>
       <span>SDR IA en production</span>
     </div>
     <div class="hero__ctas" style="margin-top:32px">
@@ -137,6 +137,26 @@
       <div class="stat">
         <div class="stat__num">RDV qualifiés</div>
         <div class="stat__label">réservés directement avec des comptes enterprise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">// PÉRIMÈTRE DE LA CAMPAGNE</span>
+      <h2>Une cible précise,<br /><span class="accent">pas une liste générique de decision makers.</span></h2>
+      <p class="lede">La campagne vise les grands comptes enterprise et gouvernementaux de la région Golfe : Émirats arabes unis, Arabie saoudite, Qatar, Koweït, Oman, Bahreïn. Le système source des comptes dans les secteurs télécom, gouvernement, services financiers, pétrole et gaz, santé, éducation, fournisseurs de cloud IA et MSP.</p>
+    </div>
+    <div class="grid-2">
+      <div class="bcard reveal">
+        <h3>Personas ciblés</h3>
+        <p>Architectes infrastructure, data et cloud, CIO, CTO, direction des données (CDO), responsables cloud souverain, responsables stockage et backup, et leads infrastructure IA/ML : les profils qui décident réellement d'un projet de data lake enterprise.</p>
+      </div>
+      <div class="bcard reveal" style="transition-delay:60ms">
+        <h3>Déclencheurs de qualification</h3>
+        <p>Le système priorise les comptes qui montrent un signal réel : infrastructure de stockage ou de backup en fin de vie, systèmes de backup et d'archivage fragmentés, nouvelle exigence de souveraineté des données, ou projets IA freinés par des silos de données.</p>
       </div>
     </div>
   </div>
@@ -175,6 +195,90 @@
       </div>
     </div>
     <p class="lede" style="margin-top:40px">C'est la preuve que le modèle "cloner un SDR" tient à l'échelle enterprise, avec les mêmes standards que pour un client tunisien. C'est le même moteur qui équipe le service <a class="link-arrow" href="../services/automatisation.html">Automatisation</a>, et la base de la solution <a class="link-arrow" href="../solutions/entreprises.html">Entreprises</a>.</p>
+  </div>
+</section>
+
+<section class="workflow workflow--sdr" id="sdr-flow">
+  <div class="workflow__dotgrid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="workflow__head reveal">
+      <span class="eyebrow">// SOUS LE CAPOT</span>
+      <h2>Le moteur SDR,<br /><span class="accent">tel qu'il tourne sur la campagne Golfe.</span></h2>
+      <p>De la liste de comptes ICP au rendez vous qualifié dans l'agenda commercial, sans étape manuelle entre les deux.</p>
+    </div>
+    <div class="workflow__canvas reveal">
+      <svg viewBox="0 0 1150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma animé du moteur SDR : sourcing ICP, construction de liste, séquence email, relance LinkedIn, rendez vous qualifié.">
+        <path class="wf-connector" d="M175,100 C215,100 195,100 215,100" />
+        <path class="wf-connector" d="M365,100 C405,100 385,100 405,100" />
+        <path class="wf-connector" d="M555,100 C595,100 575,100 595,100" />
+        <path class="wf-connector" d="M745,100 C785,100 765,100 785,100" />
+        <path class="wf-pulse" data-delay="0" d="M175,100 C215,100 195,100 215,100" />
+        <path class="wf-pulse" data-delay="1" d="M365,100 C405,100 385,100 405,100" />
+        <path class="wf-pulse" data-delay="2" d="M555,100 C595,100 575,100 595,100" />
+        <path class="wf-pulse" data-delay="3" d="M745,100 C785,100 765,100 785,100" />
+
+        <g class="wf-node-group" data-node="0">
+          <rect class="wf-node" x="25" y="63" width="150" height="74" rx="16" />
+          <g class="wf-node-icon" transform="translate(100,81)">
+            <circle cx="0" cy="0" r="9" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+            <path d="M-3,0 L-1,2 3,-2" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text class="wf-node-label" x="100" y="109" text-anchor="middle">
+            <tspan x="100" dy="0">Sourcing</tspan>
+            <tspan x="100" dy="14">ICP</tspan>
+          </text>
+        </g>
+
+        <g class="wf-node-group" data-node="1">
+          <rect class="wf-node" x="215" y="63" width="150" height="74" rx="16" />
+          <g class="wf-node-icon" transform="translate(290,81)">
+            <line x1="-8" y1="-6" x2="8" y2="-6" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="-8" y1="0" x2="8" y2="0" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="-8" y1="6" x2="4" y2="6" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+          </g>
+          <text class="wf-node-label" x="290" y="109" text-anchor="middle">
+            <tspan x="290" dy="0">Liste de</tspan>
+            <tspan x="290" dy="14">comptes</tspan>
+          </text>
+        </g>
+
+        <g class="wf-node-group" data-node="2">
+          <rect class="wf-node" x="405" y="63" width="150" height="74" rx="16" />
+          <g class="wf-node-icon" transform="translate(480,81)">
+            <path d="M-9,-6 h18 v12 h-18 z M-9,-6 l9,7 9,-7" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/>
+          </g>
+          <text class="wf-node-label" x="480" y="109" text-anchor="middle">
+            <tspan x="480" dy="0">Séquence</tspan>
+            <tspan x="480" dy="14">email</tspan>
+          </text>
+        </g>
+
+        <g class="wf-node-group" data-node="3">
+          <rect class="wf-node" x="595" y="63" width="150" height="74" rx="16" />
+          <g class="wf-node-icon" transform="translate(670,81)">
+            <circle cx="0" cy="0" r="9" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="0" y="4" text-anchor="middle" font-size="10" fill="var(--accent)" font-family="DM Mono, monospace">in</text>
+          </g>
+          <text class="wf-node-label" x="670" y="109" text-anchor="middle">
+            <tspan x="670" dy="0">Relance</tspan>
+            <tspan x="670" dy="14">LinkedIn</tspan>
+          </text>
+        </g>
+
+        <g class="wf-node-group" data-node="4">
+          <rect class="wf-node" x="785" y="63" width="150" height="74" rx="16" />
+          <g class="wf-node-icon" transform="translate(860,81)">
+            <rect x="-8" y="-7" width="16" height="14" rx="2.4" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+            <line x1="-8" y1="-2.5" x2="8" y2="-2.5" stroke="var(--accent)" stroke-width="1.4"/>
+            <path d="M-4,3 L-1,6 5,-1" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text class="wf-node-label" x="860" y="109" text-anchor="middle">
+            <tspan x="860" dy="0">RDV</tspan>
+            <tspan x="860" dy="14">qualifié</tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
   </div>
 </section>
 
