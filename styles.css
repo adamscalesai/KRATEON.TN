@@ -226,6 +226,30 @@ main { padding-top: 68px; }
 .nav__link:hover { color: var(--fg); background: var(--bg-alt); }
 .nav__mobile-toggle { display: none; }
 
+/* ---- Language toggle (FR | EN) ---- */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-right: 4px;
+}
+.lang-toggle a,
+.lang-toggle span.is-active {
+  padding: 4px 6px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.lang-toggle a { color: var(--fg-muted); transition: color 200ms var(--ease); }
+.lang-toggle a:hover { color: var(--fg); background: var(--bg-alt); }
+.lang-toggle span.is-active { color: var(--accent); font-weight: 600; }
+.lang-toggle__sep { color: var(--border); }
+@media (max-width: 900px) {
+  .lang-toggle { margin-right: 0; }
+}
+
 @media (max-width: 768px) {
   .nav__links { display: none; }
   .nav__inner { height: 60px; }
@@ -375,13 +399,14 @@ body.motion-off .hero__node { animation: none; }
   padding: 14px;
 }
 .fcard--chat {
-  width: 240px;
-  top: 12%;
-  right: 16%;
+  width: 220px;
+  top: 0%;
+  right: 2%;
   display: flex;
   flex-direction: column;
   gap: 7px;
   animation: fcardFloat 7s ease-in-out infinite;
+  z-index: 2;
 }
 .fcard--maps {
   width: 210px;
@@ -391,11 +416,12 @@ body.motion-off .hero__node { animation: none; }
   animation-delay: 0.8s;
 }
 .fcard--stat {
-  width: 170px;
-  top: 70%;
-  right: 12%;
+  width: 160px;
+  top: 47%;
+  right: 40%;
   animation: fcardFloat 8s ease-in-out infinite;
   animation-delay: 1.6s;
+  z-index: 2;
 }
 @keyframes fcardFloat {
   0%, 100% { transform: translateY(0); }
@@ -468,6 +494,98 @@ body.motion-off .hero__node { animation: none; }
   font-size: 12px;
   color: var(--fg-muted);
   margin-top: 2px;
+}
+
+/* ---- Hero industry photo card (rotating crossfade, Avoca-style) ---- */
+.hero__photocard {
+  position: relative;
+  width: 260px;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 28px 64px -26px rgba(24,24,27,0.38);
+  background: var(--border);
+}
+.hero__photocard-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: heroPhotoFade 12s linear infinite;
+}
+.hero__photocard-slide:nth-child(1) { animation-delay: 0s; }
+.hero__photocard-slide:nth-child(2) { animation-delay: -3s; }
+.hero__photocard-slide:nth-child(3) { animation-delay: -6s; }
+.hero__photocard-slide:nth-child(4) { animation-delay: -9s; }
+.hero__photocard-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@keyframes heroPhotoFade {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }
+  21%  { opacity: 1; }
+  25%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hero__photocard-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(17,17,20,0.72);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.hero__badge-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--fg);
+  box-shadow: 0 14px 32px -16px rgba(24,24,27,0.32);
+  white-space: nowrap;
+}
+.hero__badge-chip::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.hero__photocard-wrap { position: relative; display: inline-block; }
+.hero__badge-chip--top {
+  top: -14px;
+  right: -22px;
+  animation: fcardFloat 7s ease-in-out infinite;
+}
+.hero__badge-chip--bottom {
+  bottom: 24px;
+  left: -30px;
+  animation: fcardFloat 8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+.hero__photocard-desktop { position: absolute; top: 16%; right: 18%; pointer-events: auto; z-index: 1; }
+@media (max-width: 1100px) {
+  .hero__photocard-desktop { display: none; }
+}
+.hero__photocard-mobile { display: flex; justify-content: center; margin-top: 44px; }
+.hero__photocard-mobile .hero__photocard-wrap { margin: 0 30px 20px 0; }
+@media (min-width: 1101px) {
+  .hero__photocard-mobile { display: none; }
 }
 
 /* ---- Marquee strip ---- */
@@ -1298,6 +1416,9 @@ body.motion-off .hero__node { animation: none; }
   .fcard { animation: none !important; }
   .hero__cards { transition: none !important; transform: none !important; }
   .tier { transition: none !important; }
+  .hero__photocard-slide { animation: none !important; opacity: 0 !important; }
+  .hero__photocard-slide:first-child { opacity: 1 !important; }
+  .hero__badge-chip { animation: none !important; }
 }
 
 /* ---- Service page hero (simpler, no motion graphic needed) ---- */

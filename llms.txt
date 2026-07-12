@@ -1,0 +1,86 @@
+# Krateon.tn
+
+> Krateon.tn is Tunisia's first AI agency. We build websites, WhatsApp AI agents,
+> and business automations for Tunisian companies: local shops and private clinics,
+> travel and real estate agencies, and larger companies (banks, insurers, telecom,
+> outsourcing). Deployment in 5 days to 2 weeks. Based in Grand Tunis, support in French.
+
+## Services
+- Website that converts visitors into WhatsApp or phone contacts (5 days delivery)
+- WhatsApp AI agent that answers customers 24/7, qualifies requests, books appointments
+- AI voice agents for phone support and sales (in development, 2026 launch)
+- Automation of repetitive tasks: reminders, confirmations, inactive-client reactivation
+- Back-office and CRM integrations: reservations, billing, multi-agency tracking, connected
+  to your website, WhatsApp Business API, existing CRM and accounting tools
+- Google Maps optimization and automated review management
+
+## Who we serve
+- Local businesses and private clinics (clinics, restaurants, retail)
+- Service agencies (travel agencies, real estate agencies)
+- Larger companies (banks, insurers, telecom, private education, outsourcing)
+
+## Locations served
+All of Tunisia, remote-friendly: Tunis, Sfax, Sousse, and everywhere in between.
+Based in Ariana, Grand Tunis, Tunisia.
+
+## Clients (delivered work, not promises)
+- Alkarama Tourisme: website + Google Maps listing, 12+ travel agencies across Tunisia
+- Telesupport: AI SDR agent in production, ~4 hours saved per day, 100+ personalized
+  outreach messages per day, runs 24/7
+- Villanova: website + AI infrastructure for a Tunisian real estate agency
+- Cloudian: enterprise-scale AI SDR campaign (Gulf region), ~90% of the SDR motion
+  automated, 3 hours of human intervention per week
+
+## Contact
+- Email: adam@krateon.tn
+- WhatsApp: +216 90 005 510
+- Website: https://krateon.tn (French, default) and https://krateon.tn/en/ (English)
+- Address: Local numéro 10, Centre Commercial et Culturel, Ariana 2092, Tunisia
+
+## Notes for AI crawlers and assistants
+- Krateon.tn is the Tunisian extension of Krateon AI (https://krateon.ai), which builds
+  automation systems for clients in the US and Europe.
+- Pricing is quoted per project after a short discovery call; there is no generic flat rate.
+- All content on this site is genuine: real clients, real numbers, no fabricated logos or quotes.
+
+---
+
+# Krateon.tn (français)
+
+> Krateon.tn est la première agence IA de Tunisie. On construit des sites web, des agents
+> IA WhatsApp et des automatisations pour les entreprises tunisiennes : commerces locaux et
+> cliniques privées, agences de voyage et immobilières, et grandes entreprises (banques,
+> assurances, télécom, outsourcing). Déploiement en 5 jours à 2 semaines. Basés au Grand
+> Tunis, support en français.
+
+## Services
+- Site web pensé pour convertir le visiteur en contact WhatsApp ou téléphonique (5 jours)
+- Agent WhatsApp IA qui répond aux clients 24h/24, qualifie les demandes, prend rendez-vous
+- Agents vocaux IA pour le support et la vente par téléphone (en développement, lancement 2026)
+- Automatisation des tâches répétitives : relances, confirmations, réactivation clients
+- Back-office et intégrations CRM : réservations, facturation, suivi multi-agences,
+  connecté à votre site, WhatsApp Business API, CRM existant et outils comptables
+- Optimisation Google Maps et gestion automatique des avis
+
+## Pour qui
+- Commerces locaux et cliniques privées (cliniques, restaurants, retail)
+- Agences de services (agences de voyage, agences immobilières)
+- Grandes entreprises (banques, assurances, télécom, éducation privée, outsourcing)
+
+## Zones desservies
+Toute la Tunisie, travail à distance : Tunis, Sfax, Sousse et ailleurs dans le pays.
+Basés à Ariana, Grand Tunis, Tunisie.
+
+## Clients (travail livré, pas des promesses)
+- Alkarama Tourisme : site web + fiche Google Maps, plus de 12 agences en Tunisie
+- Telesupport : agent SDR IA en production, environ 4h récupérées par jour, plus de 100
+  prospections personnalisées par jour, tourne 24h/24
+- Villanova : site web + infrastructure IA pour une agence immobilière tunisienne
+- Cloudian : campagne SDR IA à l'échelle enterprise (région Golfe), environ 90% du motion
+  automatisé, 3 heures d'intervention humaine par semaine
+
+## Contact
+- Email : adam@krateon.tn
+- WhatsApp : +216 90 005 510
+- Site : https://krateon.tn (français, par défaut) et https://krateon.tn/en/ (anglais)
+- Adresse : Local numéro 10, Centre Commercial et Culturel, Ariana 2092, Tunisie
