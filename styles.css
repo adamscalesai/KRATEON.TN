@@ -2904,6 +2904,32 @@ input:focus-visible {
   border-radius: 999px;
   margin-bottom: 10px;
 }
+.cross-card--ai {
+  background: linear-gradient(160deg, color-mix(in oklab, #7C3AED 6%, var(--card-bg)), var(--card-bg));
+  border-color: color-mix(in oklab, #7C3AED 25%, var(--border));
+}
+.cross-card--ai:hover { border-color: #7C3AED; }
+
+/* mini voice-call mockup (agents vocaux card + service page) */
+.mock-call { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.mock-call__bar { display: flex; align-items: center; gap: 8px; font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--fg-muted); }
+.mock-call__dot { width: 7px; height: 7px; border-radius: 50%; background: #10B981; animation: callPulse 1.4s ease-in-out infinite; }
+@keyframes callPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+.mock-call__wave { display: flex; align-items: flex-end; gap: 3px; height: 28px; margin: 4px 0; }
+.mock-call__wave span { width: 3px; border-radius: 2px; background: var(--accent); opacity: 0.55; animation: callWave 1.1s ease-in-out infinite; }
+.mock-call__wave span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.mock-call__wave span:nth-child(2) { height: 80%; animation-delay: .1s; }
+.mock-call__wave span:nth-child(3) { height: 55%; animation-delay: .2s; }
+.mock-call__wave span:nth-child(4) { height: 95%; animation-delay: .3s; }
+.mock-call__wave span:nth-child(5) { height: 60%; animation-delay: .4s; }
+.mock-call__wave span:nth-child(6) { height: 35%; animation-delay: .5s; }
+.mock-call__wave span:nth-child(7) { height: 75%; animation-delay: .6s; }
+.mock-call__wave span:nth-child(8) { height: 45%; animation-delay: .7s; }
+@keyframes callWave { 0%,100% { transform: scaleY(0.6); } 50% { transform: scaleY(1); } }
+.mock-call__line { font-size: 12px; color: var(--fg); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; }
+@media (prefers-reduced-motion: reduce) {
+  .mock-call__dot, .mock-call__wave span { animation: none; }
+}
 
 /* ---- Packs restructure v9 ---- */
 .tier--enterprise {
@@ -2967,3 +2993,87 @@ input:focus-visible {
 .workflow--maps { --accent: #EF4444; }
 .workflow--site { --accent: #3B82F6; }
 .workflow--backoffice { --accent: #7C3AED; }
+
+/* ---- v9: dark packs band (security-band-style treatment) ---- */
+.section--packs-dark .tier {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(244,244,245,0.85);
+}
+.section--packs-dark .tier:hover { border-color: rgba(255,255,255,0.22); }
+.section--packs-dark .tier__name { color: #F4F4F5; }
+.section--packs-dark .tier__desc { color: rgba(244,244,245,0.65); }
+.section--packs-dark .tier__features li { color: rgba(244,244,245,0.78); }
+.section--packs-dark .tier__foundation { color: rgba(244,244,245,0.5); border-top-color: rgba(255,255,255,0.12); }
+.section--packs-dark .tier--popular {
+  border-color: var(--accent);
+  box-shadow: 0 18px 40px -18px rgba(59,130,246,0.5);
+}
+.section--packs-dark .tier--enterprise { border-color: rgba(167,139,250,0.35); }
+
+/* ---- v9: agents vocaux, call timeline diagram ---- */
+.call-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8px 4px;
+}
+.call-demo__step {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 26px;
+}
+.call-demo__step:last-child { padding-bottom: 0; }
+.call-demo__step::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 34px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+  opacity: 0.4;
+}
+.call-demo__step:last-child::before { display: none; }
+.call-demo__dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+.call-demo__body { padding-top: 4px; }
+.call-demo__label {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  display: block;
+  margin-bottom: 3px;
+}
+.call-demo__text { font-size: 14px; color: var(--fg); line-height: 1.5; margin: 0; }
+.call-demo__stamp { font-family: "DM Mono", monospace; font-size: 10px; color: var(--fg-muted); }
+.dev-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #7C3AED;
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 5px 12px;
+  border-radius: 999px;
+}

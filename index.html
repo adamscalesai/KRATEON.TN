@@ -137,7 +137,7 @@
       <div class="nav__drop">
         <button class="nav__link nav__drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Solutions</button>
         <div class="nav__drop-menu" role="menu">
-          <a role="menuitem" href="solutions/services-locaux.html">Commerces et services locaux<span class="nav__sublabel">Cliniques, restaurants, retail</span></a>
+          <a role="menuitem" href="solutions/services-locaux.html">Commerces et cliniques<span class="nav__sublabel">Cliniques, restaurants, retail</span></a>
           <a role="menuitem" href="solutions/agences.html">Agences<span class="nav__sublabel">Voyage, immobilier</span></a>
           <a role="menuitem" href="solutions/entreprises.html">Entreprises<span class="nav__sublabel">Banques, assurances, grands comptes</span></a>
         </div>
@@ -202,9 +202,9 @@
   <div class="hero__cards" aria-hidden="true">
     <div class="fcard fcard--chat">
       <div class="fcard__chat-time">22:47</div>
-      <div class="fcard__bubble fcard__bubble--in">Bonsoir, vous avez une voiture dispo ce week end ?</div>
-      <div class="fcard__bubble fcard__bubble--out">Oui ! Dites moi vos dates, je vous bloque le créneau.</div>
-      <div class="fcard__badge">RDV confirmé ✓</div>
+      <div class="fcard__bubble fcard__bubble--in">Bonsoir, j'ai eu un sinistre ce soir. Que dois je faire ?</div>
+      <div class="fcard__bubble fcard__bubble--out">Je vous accompagne. Donnez moi votre numéro de contrat, j'ouvre le dossier et un conseiller vous rappelle à 9h.</div>
+      <div class="fcard__badge">Dossier ouvert ✓</div>
     </div>
     <div class="fcard fcard--maps">
       <div class="fcard__maps-row">
@@ -261,14 +261,16 @@
     <div class="hero__carousel" aria-hidden="true">
       <span>Déployé pour :</span>
       <span class="hero__carousel-track">
-        <span class="hero__carousel-item is-active">🧳 Voyages</span>
-        <span class="hero__carousel-item">🏠 Immobilier</span>
-        <span class="hero__carousel-item">🩺 Cliniques</span>
-        <span class="hero__carousel-item">🍽️ Restaurants</span>
-        <span class="hero__carousel-item">🛡️ Assurance</span>
-        <span class="hero__carousel-item">📞 Outsourcing</span>
-        <span class="hero__carousel-item">🛍️ Retail</span>
-        <span class="hero__carousel-item">🎓 Éducation</span>
+        <span class="hero__carousel-item is-active"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg></span>Assurance</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l9 7h-2v10h-4v-6h-6v6H5V10H3z"/></svg></span>Banques</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>Cliniques privées</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="8" width="14" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2M12 12v4"/></svg></span>Voyages</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M4 10l8-6 8 6M10 20v-5h4v5"/></svg></span>Immobilier</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 4v6M5 4v3a2 2 0 0 0 4 0V4M7 10v10M16 4c-1.6 1-2.2 3-2.2 5s.7 3 2.2 3v8"/></svg></span>Restaurants haut de gamme</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg></span>Outsourcing</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>Retail</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 9.5 12 5l10 4.5L12 14z"/><path d="M6 12v4.5c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8V12"/></svg></span>Éducation privée</span>
+        <span class="hero__carousel-item"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20v-4M9 20v-8M14 20V8M19 20V4"/></svg></span>Télécom</span>
       </span>
     </div>
   </div>
@@ -296,12 +298,14 @@
   <div class="marquee__track">
     <span class="marquee__item">Sites web</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Agents WhatsApp</span><span class="marquee__dot">·</span>
+    <span class="marquee__item">Agents vocaux IA</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Fiches Google</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Automatisation</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Support client IA</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Agents SDR</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Sites web</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Agents WhatsApp</span><span class="marquee__dot">·</span>
+    <span class="marquee__item">Agents vocaux IA</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Fiches Google</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Automatisation</span><span class="marquee__dot">·</span>
     <span class="marquee__item">Support client IA</span><span class="marquee__dot">·</span>
@@ -324,11 +328,79 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// CE QU'ON DÉPLOIE</span>
-      <h2>Quatre systèmes.<br /><span class="accent">Un seul objectif : arrêter de perdre des clients.</span></h2>
+      <h2>Six systèmes.<br /><span class="accent">Un seul objectif : arrêter de perdre des clients.</span></h2>
     </div>
     <div class="grid-jobs">
 
-      <article class="jcard reveal">
+      <article class="jcard jcard--ai reveal">
+        <span class="jcard__ai-tag">IA</span>
+        <div class="jcard__mock">
+          <div class="mock-chat">
+            <div class="mock-chat__time">22:47</div>
+            <div class="mock-chat__bubble mock-chat__bubble--in mock-anim" style="--d:100ms">Bonsoir, j'ai eu un sinistre dégât des eaux ce soir, vous pouvez m'aider ?</div>
+            <div class="mock-chat__typing mock-anim" style="--d:600ms" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="mock-chat__bubble mock-chat__bubble--out mock-anim" style="--d:1500ms">Désolé pour vous. Dites moi votre contrat et l'adresse, j'ouvre le dossier et un conseiller vous rappelle dès l'ouverture.</div>
+            <div class="mock-chat__bubble mock-chat__bubble--in mock-anim" style="--d:2100ms">Appartement à Tunis, contrat habitation</div>
+          </div>
+        </div>
+        <h3>Le vendeur qui ne dort jamais</h3>
+        <p class="jcard__body">Répond à vos clients à 23h, capture leurs coordonnées et le détail de la demande, et prend le rendez vous pendant que votre équipe dort.</p>
+        <a class="link-arrow" href="services/agent-whatsapp.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard jcard--ai reveal" style="transition-delay:60ms">
+        <span class="jcard__ai-tag">IA · 2026</span>
+        <div class="jcard__mock">
+          <div class="mock-call">
+            <div class="mock-call__bar"><span class="mock-call__dot"></span>Appel entrant · 21:52</div>
+            <div class="mock-call__wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="mock-call__line">Sinistre auto qualifié, RDV expert programmé demain 9h</div>
+          </div>
+        </div>
+        <h3>Agents vocaux IA</h3>
+        <p class="jcard__body">Répond au téléphone, qualifie la demande et réserve le rendez vous, comme un agent WhatsApp mais à la voix. En développement, lancement 2026.</p>
+        <a class="link-arrow" href="services/agents-vocaux.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard jcard--ai reveal" style="transition-delay:120ms">
+        <span class="jcard__ai-tag">IA</span>
+        <div class="jcard__mock">
+          <div class="mock-browser__bar">
+            <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
+            <span class="mock-browser__url">campagnes.votreentreprise.tn</span>
+          </div>
+          <div class="mock-browser__body">
+            <div class="mock-browser__line" style="width:75%"></div>
+            <div class="mock-browser__line mock-browser__line--accent" style="width:50%"></div>
+            <div class="mock-browser__line" style="width:60%"></div>
+            <span class="mock-browser__btn">Relancer les clients inactifs</span>
+          </div>
+        </div>
+        <h3>Fini les tâches répétitives</h3>
+        <p class="jcard__body">Relances, confirmations, prospection et réactivation de clients inactifs. Un système qui tourne 24h sur 24 pendant que votre équipe vend.</p>
+        <a class="link-arrow" href="services/automatisation.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard jcard--ai reveal" style="transition-delay:180ms">
+        <span class="jcard__ai-tag">IA</span>
+        <div class="jcard__mock">
+          <div class="mock-browser__bar">
+            <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
+            <span class="mock-browser__url">gestion.votreentreprise.tn</span>
+          </div>
+          <div class="mock-browser__body">
+            <div class="mock-browser__line" style="width:70%"></div>
+            <div class="mock-browser__line" style="width:45%"></div>
+            <div class="mock-browser__line mock-browser__line--accent" style="width:85%"></div>
+            <span class="mock-browser__btn">Nouvelle réservation</span>
+          </div>
+        </div>
+        <h3>Le cerveau qui coordonne tout</h3>
+          <p class="jcard__body">Un espace de gestion sur mesure : réservations, facturation, suivi multi-agences. Une interface simple qu'un employé normal peut utiliser sans formation technique.</p>
+          <a class="link-arrow" href="services/back-office.html">→ Voir le service</a>
+      </article>
+
+      <article class="jcard reveal" style="transition-delay:240ms">
         <div class="jcard__mock">
           <div class="mock-browser__bar">
             <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
@@ -346,22 +418,7 @@
         <a class="link-arrow" href="services/site-web.html">→ Voir le service</a>
       </article>
 
-      <article class="jcard reveal" style="transition-delay:60ms">
-        <div class="jcard__mock">
-          <div class="mock-chat">
-            <div class="mock-chat__time">22:47</div>
-            <div class="mock-chat__bubble mock-chat__bubble--in mock-anim" style="--d:100ms">Bonsoir, vous faites encore des devis ce soir ?</div>
-            <div class="mock-chat__typing mock-anim" style="--d:600ms" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="mock-chat__bubble mock-chat__bubble--out mock-anim" style="--d:1500ms">Oui ! Dites moi le service et votre ville, je vous prépare ça et un conseiller vous rappelle demain matin.</div>
-            <div class="mock-chat__bubble mock-chat__bubble--in mock-anim" style="--d:2100ms">Nettoyage bureau, Sousse</div>
-          </div>
-        </div>
-        <h3>Le vendeur qui ne dort jamais</h3>
-        <p class="jcard__body">Répond à vos clients à 23h, capture leurs coordonnées et le détail de la demande, et prend le rendez vous pendant que votre équipe dort.</p>
-        <a class="link-arrow" href="services/agent-whatsapp.html">→ Voir le service</a>
-      </article>
-
-      <article class="jcard reveal" style="transition-delay:120ms">
+      <article class="jcard reveal" style="transition-delay:300ms">
         <div class="jcard__mock">
           <div class="mock-maps">
             <div class="mock-maps__result">
@@ -386,28 +443,8 @@
           </div>
         </div>
         <h3>Premier sur Google Maps</h3>
-        <p class="jcard__body">Fiche Google optimisée pour sortir dans les trois premiers résultats quand un client cherche votre service près de chez lui.</p>
+        <p class="jcard__body">Fiche Google optimisée pour sortir dans les trois premiers résultats quand un client cherche votre service près de chez lui, plus la gestion automatique des avis.</p>
         <a class="link-arrow" href="services/google-maps.html">→ Voir le service</a>
-      </article>
-
-      <article class="jcard jcard--wide reveal" style="transition-delay:180ms">
-        <div class="jcard__mock">
-          <div class="mock-browser__bar">
-            <span class="mock-browser__dot"></span><span class="mock-browser__dot"></span><span class="mock-browser__dot"></span>
-            <span class="mock-browser__url">gestion.votreentreprise.tn</span>
-          </div>
-          <div class="mock-browser__body">
-            <div class="mock-browser__line" style="width:70%"></div>
-            <div class="mock-browser__line" style="width:45%"></div>
-            <div class="mock-browser__line mock-browser__line--accent" style="width:85%"></div>
-            <span class="mock-browser__btn">Nouvelle réservation</span>
-          </div>
-        </div>
-        <div class="jcard__text">
-          <h3>Le cerveau qui coordonne tout</h3>
-          <p class="jcard__body">Un espace de gestion sur mesure : réservations, facturation, suivi multi-agences. Une interface simple qu'un employé normal peut utiliser sans formation technique.</p>
-          <a class="link-arrow" href="services/back-office.html">→ Voir le service</a>
-        </div>
       </article>
 
     </div>
@@ -422,20 +459,20 @@
     </div>
     <div class="grid-3 grid-seg">
       <article class="segcard reveal">
-        <span class="segcard__tag">Commerces et services locaux</span>
-        <h3>Restaurants, cliniques, salles de sport, location de voitures</h3>
+        <span class="segcard__tag">Commerces et cliniques</span>
+        <h3>Cliniques privées, cabinets, restaurants haut de gamme, retail</h3>
         <p class="segcard__body">Être trouvé sur Google et Google Maps, un site qui convertit le visiteur en client, un agent WhatsApp qui répond aux demandes même après la fermeture.</p>
         <a class="link-arrow" href="solutions/services-locaux.html">→ Voir la solution</a>
       </article>
       <article class="segcard reveal" style="transition-delay:60ms">
-        <span class="segcard__tag">Agences</span>
+        <span class="segcard__tag">Agences de services</span>
         <h3>Agences de voyage, agences immobilières</h3>
         <p class="segcard__body">Site web, fiche Google optimisée et agent WhatsApp qui capture les demandes de réservation 24h sur 24, pour ne plus perdre une demande pendant la nuit ou le week end.</p>
         <a class="link-arrow" href="solutions/agences.html">→ Voir la solution</a>
       </article>
       <article class="segcard reveal" style="transition-delay:120ms">
-        <span class="segcard__tag">Entreprises et grandes équipes</span>
-        <h3>Support client, prospection, tâches administratives</h3>
+        <span class="segcard__tag">Banques, assurances et grandes entreprises</span>
+        <h3>Banque, assurance, télécom, éducation privée, outsourcing</h3>
         <p class="segcard__body">Support client IA multicanal, agents SDR pour la prospection, automatisation des tâches administratives répétitives, intégration à vos systèmes existants (CRM, email, WhatsApp Business API).</p>
         <a class="link-arrow" href="solutions/entreprises.html">→ Voir la solution</a>
       </article>
@@ -445,13 +482,14 @@
       <div class="industries__chips">
         <span class="chip">Voyages</span>
         <span class="chip">Immobilier</span>
-        <span class="chip">Location de voitures</span>
-        <span class="chip">Cliniques</span>
+        <span class="chip">Cliniques privées</span>
         <span class="chip">Restaurants</span>
         <span class="chip">Retail</span>
-        <span class="chip">Outsourcing</span>
-        <span class="chip">Éducation</span>
+        <span class="chip">Banque</span>
         <span class="chip">Assurance</span>
+        <span class="chip">Télécom</span>
+        <span class="chip">Éducation privée</span>
+        <span class="chip">Outsourcing</span>
       </div>
     </div>
   </div>
@@ -787,48 +825,50 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">// PACKS</span>
-      <h2>Choisissez votre<br /><span class="accent">déploiement.</span></h2>
+      <h2>Trois façons<br /><span class="accent">de ne plus perdre de clients.</span></h2>
       <p class="lede">Pas de tarif générique : chaque déploiement est chiffré sur votre cas. Écrivez nous, on vous dit clairement ce que ça coûte et ce que ça rapporte.</p>
     </div>
     <div class="grid-3 tiers">
       <article class="tier reveal">
-        <h3 class="tier__name">DÉMARRAGE</h3>
-        <p class="tier__desc">Pour faire vos premiers pas avec l'IA.</p>
+        <span class="tier__outcome">Être trouvé et convertir</span>
+        <h3 class="tier__name">PRÉSENCE</h3>
+        <p class="tier__desc">Pour exister en ligne et capter la recherche locale.</p>
         <ul class="tier__features">
-          <li>Un système automatisé (site web OU agent WhatsApp OU automatisation)</li>
+          <li>Site web rapide, pensé pour convertir le visiteur en client</li>
+          <li>Fiche Google Maps optimisée pour le pack local</li>
+          <li>Gestion automatique des avis Google</li>
           <li>Livraison en 5 à 14 jours</li>
           <li>Documentation complète et propriété totale</li>
-          <li>14 jours de support post lancement</li>
-          <li>Formation de votre équipe incluse</li>
         </ul>
-        <a class="btn btn--primary tier__cta" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
+        <a class="btn btn--primary tier__cta" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20le%20pack%20Pr%C3%A9sence" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
       </article>
       <article class="tier tier--popular reveal" style="transition-delay:60ms">
         <span class="tier__badge">CHOIX LE PLUS POPULAIRE</span>
+        <span class="tier__outcome">Ne plus jamais rater un client</span>
         <h3 class="tier__name">CROISSANCE</h3>
-        <p class="tier__desc">Déploiement multi-système qui évolue avec vous.</p>
+        <p class="tier__desc">Le pack Présence, plus un système qui répond à votre place.</p>
         <ul class="tier__features">
-          <li>Tout ce qui est inclus dans Démarrage</li>
-          <li>Plusieurs systèmes combinés (site + agent WhatsApp + automatisations)</li>
-          <li>Automatisation multi-canal (WhatsApp, Messenger, Instagram)</li>
-          <li>Sessions d'optimisation mensuelles</li>
-          <li>30 jours de support post lancement</li>
-          <li>Account manager dédié</li>
+          <li>Tout ce qui est inclus dans Présence</li>
+          <li>Agent WhatsApp qui répond et qualifie 24h sur 24</li>
+          <li>Campagnes de réactivation clients incluses</li>
+          <li>Automatisations sur mesure (relances, confirmations, tri des demandes)</li>
+          <li>30 jours de support post lancement, account manager dédié</li>
         </ul>
-        <a class="btn btn--primary tier__cta" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
+        <a class="btn btn--primary tier__cta" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20le%20pack%20Croissance" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
       </article>
-      <article class="tier reveal" style="transition-delay:120ms">
-        <h3 class="tier__name">SUR MESURE</h3>
-        <p class="tier__desc">Déploiement entreprise pour multi-sites ou opérations complexes.</p>
+      <article class="tier tier--enterprise reveal" style="transition-delay:120ms">
+        <span class="tier__outcome">Déploiement IA complet</span>
+        <h3 class="tier__name">ENTERPRISE</h3>
+        <p class="tier__desc">Pour les multi-sites, banques, assurances et grands comptes.</p>
         <ul class="tier__features">
           <li>Support client IA multicanal</li>
-          <li>Agents SDR pour la prospection</li>
-          <li>Intégrations sur mesure (CRM, email, WhatsApp Business API)</li>
-          <li>Reporting exécutif et tracking ROI</li>
-          <li>Account manager dédié</li>
-          <li>Agents vocaux IA pour le support client : en développement, lancement 2026</li>
+          <li>Agents SDR pour la prospection B2B</li>
+          <li>Agents vocaux IA pour le support et la vente : en développement, lancement 2026</li>
+          <li>Back-office et intégrations sur mesure (CRM, email, WhatsApp Business API)</li>
+          <li>Reporting exécutif et tracking ROI, account manager dédié</li>
         </ul>
-        <a class="btn btn--primary tier__cta" href="https://wa.me/21690005510?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20Krateon.tn" target="_blank" rel="noopener noreferrer">Discuter sur WhatsApp</a>
+        <p class="tier__foundation">Construit sur les packs Présence et Croissance, jamais vendu seul en premier système.</p>
+        <a class="btn btn--primary tier__cta" href="https://calendly.com/adam-krateon/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
       </article>
     </div>
   </div>
@@ -1027,7 +1067,7 @@
       <div>
         <div class="footer__col-title">Solutions</div>
         <div class="footer__links">
-          <a href="solutions/services-locaux.html">Commerces et services locaux</a>
+          <a href="solutions/services-locaux.html">Commerces et cliniques</a>
           <a href="solutions/agences.html">Agences</a>
           <a href="solutions/entreprises.html">Entreprises</a>
         </div>
